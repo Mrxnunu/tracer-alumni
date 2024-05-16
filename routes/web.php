@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\Post;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\TracerAlumniController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+
+
+Route::get('/', [TracerAlumniController::class, 'show']);
