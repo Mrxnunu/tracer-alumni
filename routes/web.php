@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TracerAlumniController;
@@ -50,3 +51,8 @@ Route::get('/dashboard', function () {
 // route untuk register
 // guest hanya untuk yang belum login atau tamu
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+
+
+
+
+Route::get('/pertanyaan', [PertanyaanController::class, 'index']);
