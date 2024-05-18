@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardCategory;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardPertanyaanController;
+use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\PostController;
@@ -46,6 +49,22 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/dashboard', function () {
   return view('dashboard.index');
 })->middleware('auth');
+
+
+// route yang ada diddalam dashboard'
+
+Route::resource('/dashboard/categories', DashboardCategory::class)
+  ->middleware('auth');
+
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+
+
+Route::resource('/dashboard/kuisioner', DashboardPertanyaanController::class)->middleware('auth');
+
+
+
+
 
 
 // route untuk register

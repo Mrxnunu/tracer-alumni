@@ -1,7 +1,7 @@
 @extends('layouts.defaultAdmin')
 @section('content')
   <div class="bg-slate-100 py-4 px-2 rounded-sm">
-    <h1 class="font-bold text-lg md:text-xl ms-4">Dashboard Tracer Alumni Universitas Bhayangakara Jakarta Raya</h1>
+    <h1 class="font-bold text-lg md:text-xl ms-4">Admin {{ auth()->user()->name }} Universitas Bhayangakara Jakarta Raya</h1>
     <div class="p-4 grid md:flex flex-row gap-2 justify-around">
       <div class="basis-1/4 bg-white shadow-md rounded-md py-5 px-3">
         <div class="flex justify-between">
