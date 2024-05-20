@@ -45,7 +45,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 // route berhasil login dan mengarah ke dashboard
 Route::get('/dashboard', function () {
   return view('dashboard.index');
-})->middleware('auth');
+});
 
 
 // route untuk register

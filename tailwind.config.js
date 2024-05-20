@@ -7,7 +7,10 @@ export default {
         "./node_modules/flowbite/**/*.js"
     ],
     theme: {
-        extend: {},
+        extend: {
+        fontFamily: {
+            'montserrat': ['Montserrat']
+        }},
     },
     plugins: [require("daisyui"), require('flowbite/plugin')],
 };
