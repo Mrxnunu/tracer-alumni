@@ -9,6 +9,6 @@ class TracerAlumniController extends Controller
     //
     public function show()
     {
-        return view('traceralumni.kontak');
+        return view('traceralumni.home');
     }
 }
