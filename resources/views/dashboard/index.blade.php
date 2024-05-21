@@ -11,7 +11,7 @@
           </svg>
         </div>
         <div>
-          <h2 class="font-bold text-xl">23</h2>
+          <h2 class="font-bold text-xl">5</h2>
         </div>
       </div>
         <div class="basis-1/4 bg-white shadow-md rounded-md py-5 px-3">
@@ -22,20 +22,20 @@
           </svg>
         </div>
         <div>
-          <h2 class="font-bold text-xl">15</h2>
+          <h2 class="font-bold text-xl">3</h2>
         </div>
       </div>
-      {{-- <div class="basis-1/4 bg-white shadow-md rounded-md py-5 px-3">
+      <div class="basis-1/4 bg-white shadow-md rounded-md py-5 px-3">
         <div class="flex justify-between">
-          <h1 class="font-sans font-semibold text-sm">Data Kelulusan Mahasiswa</h1>
+          <h1 class="font-sans font-semibold text-sm">Total Artikel</h1>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
             <path d="M10 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.465 14.493a1.23 1.23 0 0 0 .41 1.412A9.957 9.957 0 0 0 10 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 0 0-13.074.003Z" />
           </svg>
         </div>
         <div>
-          <h2 class="font-bold text-xl">125</h2>
+          <h2 class="font-bold text-xl">{{ $artikel }}</h2>
         </div>
-      </div> --}}
+      </div>
       <div class="basis-1/4 bg-white shadow-md rounded-md py-5 px-3">
         <div class="flex justify-between">
           <h1 class="font-sans font-semibold text-sm">Total Kuisioner yang dilakukan</h1>
@@ -44,7 +44,7 @@
           </svg>
         </div>
         <div>
-          <h2 class="font-bold text-xl">23</h2>
+          <h2 class="font-bold text-xl">4</h2>
         </div>
       </div>
     </div>
