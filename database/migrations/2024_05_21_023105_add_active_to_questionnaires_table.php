@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('answers', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('id_parameter');
-            $table->string('jawaban');
-            $table->foreign('id_parameter')->references('id')->on('parameters')->onDelete('cascade');
-            $table->timestamps();
+        Schema::table('questionnaires', function (Blueprint $table) {
+            $table->boolean('active')->default(false);
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('answers');
+        Schema::table('questionnaires', function (Blueprint $table) {
+            //
+        });
     }
 };

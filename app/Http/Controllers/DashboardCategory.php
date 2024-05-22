@@ -3,36 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Post;
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class DashboardCategory extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // $posts = Post::latest()->get();
-
-        // return view('posts', compact('posts'));
-
-        $title = '';
-        if (request('category')) {
-            $category = Category::firstWhere('slug', request('category'));
-            $title = ' in ' . $category->name;
-        }
-
-        if (request('author')) {
-            $author = User::firstWhere('username', request('author'));
-            $title = ' by ' . $author->name;
-        }
-
-        return view('posts', [
-            "title" => "All Posts" . $title,
-            "posts" =>  Post::latest()->filter(request(['search', 'category', 'author']))
-                ->paginate(7)->withQueryString()
+        return view('dashboard.categories.index', [
+            'categories' => Category::all()
         ]);
     }
 
@@ -55,12 +36,9 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(string $id)
     {
-        return view('post', [
-            "title" => "Single Post",
-            "post" => $post
-        ]);
+        //
     }
 
     /**

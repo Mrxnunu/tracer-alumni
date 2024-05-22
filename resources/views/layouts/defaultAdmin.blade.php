@@ -5,9 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="{{ asset('back/img/Logo_ubhara.png') }}" type="image/x-icon"/>
   <title>Ubharajaya | Admin Tracer Alumni</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   @vite('resources/css/app.css')
   @vite(['resources/css/app.css','resources/js/app.js'])
+  {{-- trix editor --}}
+  <link rel="stylesheet" type="text/css" href="/css/trix.css">
+  <script type="text/javascript" src="/js/trix.js"></script>
+  {{-- hilang tombol --}}
+  <style>
+    trix-toolbar [data-trix-button-group="file-tools"] {
+      display:none;
+    }
+  </style>
 </head>
 <body class="font-montserrat">
     <div class="wrapper">

@@ -82,64 +82,64 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        Topik::create([
-            'kd_topik' => 'A',
-            'topik' => 'Data Diri Alumni'
-        ]);
-        Topik::create([
-            'kd_topik' => 'B',
-            'topik' => 'Pekerjaan Setelah lulus'
-        ]);
-        Topik::create([
-            'kd_topik' => 'C',
-            'topik' => 'Perusahann'
-        ]);
+        // Topik::create([
+        //     'kd_topik' => 'A',
+        //     'topik' => 'Data Diri Alumni'
+        // ]);
+        // Topik::create([
+        //     'kd_topik' => 'B',
+        //     'topik' => 'Pekerjaan Setelah lulus'
+        // ]);
+        // Topik::create([
+        //     'kd_topik' => 'C',
+        //     'topik' => 'Perusahann'
+        // ]);
 
 
-        // ini id periode ke 1
-        Periode::create([
-            'nama_periode' => "2020"
-        ]);
-        // ini id periode ke 2
-        Periode::create([
-            'nama_periode' => "2019"
-        ]);
-        // ini id periode ke 3
-        Periode::create([
-            'nama_periode' => "2021"
-        ]);
+        // // ini id periode ke 1
+        // Periode::create([
+        //     'nama_periode' => "2020"
+        // ]);
+        // // ini id periode ke 2
+        // Periode::create([
+        //     'nama_periode' => "2019"
+        // ]);
+        // // ini id periode ke 3
+        // Periode::create([
+        //     'nama_periode' => "2021"
+        // ]);
 
-        Parameter::create([
-            'topik_id' => 1,
-            'priode_id' => 1,
-            'parameter' => "Nama Alumni"
-        ]);
-        Parameter::create([
-            'topik_id' => 2,
-            'priode_id' => 1,
-            'parameter' => "Tempat Kerja "
-        ]);
-        Parameter::create([
-            'topik_id' => 3,
-            'priode_id' => 1,
-            'parameter' => "Profil Perushaan "
-        ]);
+        // Parameter::create([
+        //     'topik_id' => 1,
+        //     'priode_id' => 1,
+        //     'parameter' => "Nama Alumni"
+        // ]);
+        // Parameter::create([
+        //     'topik_id' => 2,
+        //     'priode_id' => 1,
+        //     'parameter' => "Tempat Kerja "
+        // ]);
+        // Parameter::create([
+        //     'topik_id' => 3,
+        //     'priode_id' => 1,
+        //     'parameter' => "Profil Perushaan "
+        // ]);
 
-        Answer::create([
-            "id_parameter" => 1,
-            "jawaban" => "Muhammad Ibnu Mahjub"
-        ]);
-        Answer::create([
-            "id_parameter" => 2,
-            "jawaban" => "Kementerian Informatika"
-        ]);
-        Answer::create([
-            "id_parameter" => 1,
-            "jawaban" => "Bagas Maulana"
-        ]);
-        Answer::create([
-            "id_parameter" => 2,
-            "jawaban" => "Kementrian Keuangan"
-        ]);
+        // Answer::create([
+        //     "id_parameter" => 1,
+        //     "jawaban" => "Muhammad Ibnu Mahjub"
+        // ]);
+        // Answer::create([
+        //     "id_parameter" => 2,
+        //     "jawaban" => "Kementerian Informatika"
+        // ]);
+        // Answer::create([
+        //     "id_parameter" => 1,
+        //     "jawaban" => "Bagas Maulana"
+        // ]);
+        // Answer::create([
+        //     "id_parameter" => 2,
+        //     "jawaban" => "Kementrian Keuangan"
+        // ]);
     }
 }
