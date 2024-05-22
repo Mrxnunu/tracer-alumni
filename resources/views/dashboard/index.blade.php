@@ -1,7 +1,21 @@
 @extends('layouts.defaultAdmin')
 @section('content')
-  <div class="bg-slate-100 py-4 px-2 rounded-sm">
-    <h1 class="font-bold text-lg md:text-xl ms-4">Admin {{ auth()->user()->name }} Universitas Bhayangakara Jakarta Raya</h1>
+<div class="px-4 sm:px-8">
+    <!-- Breadcrumb -->
+  <nav class="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <li class="inline-flex items-center">
+            <a href="/dashboard" class="inline-flex items-center text-sm font-medium text-amber-600 dark:text-gray-400 dark:hover:text-white">
+                <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                </svg>
+                Dashboard
+            </a>
+            </li>
+        </ol>
+  </nav>
+  <div class="bg-slate-100 py-4 px-2 rounded-sm mt-4">
+    <h1 class="font-bold text-lg md:text-xl ms-4">Admin <span class="uppercase">{{ auth()->user()->name }}</span> Universitas Bhayangakara Jakarta Raya</h1>
     <div class="p-4 grid md:flex flex-row gap-2 justify-around">
       <div class="basis-1/4 bg-white shadow-md rounded-md py-5 px-3">
         <div class="flex justify-between">
@@ -49,4 +63,5 @@
       </div>
     </div>
   </div>
+</div>
 @endsection
