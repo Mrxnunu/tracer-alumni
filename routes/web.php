@@ -34,6 +34,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [TracerAlumniController::class, 'show']);
+Route::get('/kontak', [TracerAlumniController::class, 'contact']);
+
 
 // halaman all artikel
 Route::get('/artikel', [PostController::class, 'index']);

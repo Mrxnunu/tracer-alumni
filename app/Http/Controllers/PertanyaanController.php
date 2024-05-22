@@ -17,7 +17,11 @@ class PertanyaanController extends Controller
         // $questionnaire = Questionnaire::with('questions.answers')->latest()->first();
 
         // Pass the questionnaire to the view
-        return view('pertanyaan', compact('questionnaire'));
+        // return view('pertanyaan', compact('questionnaire'));
+        return view('pertanyaan', [
+            "title" => "Kuisioner",
+            "questionnaire" => $questionnaire
+        ]);
     }
 
     // public function store(Request $request)

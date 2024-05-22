@@ -12,22 +12,19 @@
                   <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white border-b w-1/2 border-amber-600">Tautan</h2>
                   <ul class="text-gray-500 dark:text-gray-400 font-medium">
                       <li class="mb-4">
-                          <a href="#" class="hover:underline hover:text-amber-600">Beranda</a>
+                          <a href="/" class="hover:underline hover:text-amber-600">Beranda</a>
                       </li>
                       <li class="mb-4">
                           <a href="#" class="hover:underline hover:text-amber-600">Info Lowongan Kerja</a>
                       </li>
                       <li class="mb-4">
-                          <a href="#" class="hover:underline hover:text-amber-600">Info Lowongan Kerja</a>
+                          <a href="/kontak" class="hover:underline hover:text-amber-600">Kontak</a>
                       </li>
                       <li class="mb-4">
-                          <a href="#" class="hover:underline hover:text-amber-600">Kontak</a>
-                      </li>
-                      <li class="mb-4">
-                          <a href="#" class="hover:underline hover:text-amber-600">Artikel</a>
+                          <a href="/artikel" class="hover:underline hover:text-amber-600">Artikel</a>
                       </li>
                       <li>
-                          <a href="#" class="hover:underline hover:text-amber-600">Kuisioner</a>
+                          <a href="/pertanyaan" class="hover:underline hover:text-amber-600">Kuisioner</a>
                       </li>
                   </ul>
               </div>

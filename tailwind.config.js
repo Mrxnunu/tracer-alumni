@@ -8,9 +8,11 @@ export default {
     ],
     theme: {
         extend: {
-        fontFamily: {
-            'montserrat': ['Montserrat']
-        }},
+            backgroundColor: ['active'],
+            fontFamily: {
+                'montserrat': ['Montserrat']
+            }
+        },
     },
     plugins: [require("daisyui"), require('flowbite/plugin')],
 };
