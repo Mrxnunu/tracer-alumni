@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\tbl_info_loker;
 use Illuminate\Http\Request;
 
-class DashboardCategory extends Controller
+class DashboardLoker extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('dashboard.categories.index', [
-            'categories' => Category::all()
+        return view('dashboard.loker.index', [
+            'loker' => tbl_info_loker::where('user_id', auth()->user()->id)->get()
         ]);
     }
 
@@ -22,7 +22,7 @@ class DashboardCategory extends Controller
      */
     public function create()
     {
-        return view('dashboard.categories.create');
+        //
     }
 
     /**
@@ -30,13 +30,7 @@ class DashboardCategory extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
-        $validateData = $request->validate([
-            'name' => 'required|max:255',
-            'slug' => 'required|unique:posts',
-        ]);
-        Category::create($validateData);
-        return redirect('/dashboard/categories')->with('success', 'New Category has been aded!');
+        //
     }
 
     /**

@@ -4,10 +4,12 @@ use App\Http\Controllers\DashboardAlumniController;
 use App\Http\Controllers\DashboardCategory;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardIndexController;
+use App\Http\Controllers\DashboardLoker;
 use App\Http\Controllers\DashboardPertanyaanController;
 use App\Http\Controllers\DashboardPerusahaanController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\Formanswermhs;
+use App\Http\Controllers\InfoLokerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\PostController;
@@ -35,6 +37,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TracerAlumniController::class, 'show']);
 Route::get('/kontak', [TracerAlumniController::class, 'contact']);
+
+// halaman info loker
+Route::get('/loker', [InfoLokerController::class, 'index']);
+Route::get('lokers/{loker:slug}', [InfoLokerController::class, 'show']);
 
 
 // halaman all artikel
@@ -64,12 +70,15 @@ Route::get('/dashboard', [DashboardIndexController::class, 'index'])->middleware
 Route::resource('/dashboard/categories', DashboardCategory::class)
   ->middleware('auth');
 
+Route::resource('/dashboard/loker', DashboardLoker::class)->middleware('auth');
+
+// dashboard crud post
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 
 
 Route::get('/dashboard/alumni', [DashboardAlumniController::class, 'index'])->middleware('auth');
-Route::get('/dashboard/perushaan', [DashboardPerusahaanController::class, 'index'])->middleware('auth');
+// Route::get('/dashboard/perushaan', [DashboardPerusahaanController::class, 'index'])->middleware('auth');
 
 
 Route::resource('/dashboard/pertanyaan', DashboardPertanyaanController::class)->middleware('auth');

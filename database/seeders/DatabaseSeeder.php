@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Parameter;
 use App\Models\Periode;
 use App\Models\Post;
+use App\Models\tbl_info_loker;
 use App\Models\Topik;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -79,6 +80,29 @@ class DatabaseSeeder extends Seeder
             'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
             'category_id' => 3,
             'user_id' => 2,
+        ]);
+
+        // info loker
+        tbl_info_loker::create([
+            'title' => 'Lowongan Pekerjaan Fullstack Devloper',
+            'slug' => 'lowongan-pekerjaan-fullstack-developer',
+            'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
+            'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
+            'user_id' => 2,
+        ]);
+        tbl_info_loker::create([
+            'title' => 'Lowongan Pekerjaan Backend Developer',
+            'slug' => 'lowongan-pekerjaan-backend-developer',
+            'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
+            'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
+            'user_id' => 1,
+        ]);
+        tbl_info_loker::create([
+            'title' => 'Lowongan Pekerjaan Frontend Devloper',
+            'slug' => 'lowongan-pekerjaan-frontend-developer',
+            'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
+            'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
+            'user_id' => 1,
         ]);
 
 

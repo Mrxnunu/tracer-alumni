@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\tbl_info_loker;
 use Illuminate\Http\Request;
 
-class DashboardCategory extends Controller
+class InfoLokerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('dashboard.categories.index', [
-            'categories' => Category::all()
+        return view('v_loker', [
+            "title" => "All Loker",
+            "lokers" =>  tbl_info_loker::all()
         ]);
     }
 
@@ -22,7 +23,7 @@ class DashboardCategory extends Controller
      */
     public function create()
     {
-        return view('dashboard.categories.create');
+        //
     }
 
     /**
@@ -30,21 +31,18 @@ class DashboardCategory extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
-        $validateData = $request->validate([
-            'name' => 'required|max:255',
-            'slug' => 'required|unique:posts',
-        ]);
-        Category::create($validateData);
-        return redirect('/dashboard/categories')->with('success', 'New Category has been aded!');
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(tbl_info_loker $loker)
     {
-        //
+        return view('v_single_loker', [
+            "title" => "Single Post",
+            "loker" => $loker
+        ]);
     }
 
     /**

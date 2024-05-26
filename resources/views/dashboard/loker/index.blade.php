@@ -18,7 +18,7 @@
                 <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                 </svg>
-                <a href="/dashboard/categories" class="ms-1 text-sm font-medium text-amber-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Kategori Artikel</a>
+                <a href="/dashboard/loker" class="ms-1 text-sm font-medium text-amber-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Loker</a>
             </div>
             </li>
         </ol>
@@ -32,9 +32,9 @@
             <div class="flex flex-row mb-1 sm:mb-0 justify-between w-full items-center">
                 
                 
-                <h2 class="text-2xl leading-tight font-medium">Master Kategori Artikel</h2>
+                <h2 class="text-2xl leading-tight font-medium">Master Loker</h2>
                 <div class="text-end flex space-x-3">
-                    <a href="/dashboard/categories/create" class="flex-shrink-0 px-4 py-2 text-xs font-semibold text-white bg-amber-600 rounded-lg shadow-md hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-green-200">Tambah Artikel</a>
+                    <a href="/dashboard/loker/create" class="flex-shrink-0 px-4 py-2 text-xs font-semibold text-white bg-amber-600 rounded-lg shadow-md hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-green-200">Tambah Loker</a>
                 </div>
             </div>
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -46,10 +46,10 @@
                                     No
                                 </th>
                                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Category
+                                    Judul
                                 </th>
                                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    slug
+                                    Slug
                                 </th>
                                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                     Actions
@@ -57,16 +57,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $c)
+                            @foreach ($loker as $lo)
                             <tr>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <p class="text-gray-900 whitespace-no-wrap">{{ $loop->iteration }}</p>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">{{ $c->name }}</p>
+                                    <p class="text-gray-900 whitespace-no-wrap">{{ $lo->title }}</p>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">{{ $c->slug }}</p>
+                                    <p class="text-gray-900 whitespace-no-wrap">{{ $lo->slug}}</p>
                                 </td>
                                 <td class="md:flex md:gap-2 px-5 py-5 border-b border-gray-200 bg-dark text-sm">
                                     <button type="button" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200 mb-2 md:mb-0">

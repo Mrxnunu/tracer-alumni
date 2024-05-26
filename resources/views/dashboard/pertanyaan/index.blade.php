@@ -62,7 +62,7 @@
                                 Keterangan
                             </th>
                             <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                Actions
+                                Detail
                             </th>
                         </tr>
                     </thead>
@@ -76,19 +76,19 @@
                                 <p class="text-gray-900 whitespace-no-wrap">{{ $q->description }}</p>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <form action="{{ route('pertanyaan.toggleActive', $q->id) }}" method="POST">
+                                <form action="{{ route('pertanyaan.toggleActive', $q->id) }}" method="POST" id="toggle-active-form-{{ $q->id }}">
                                     @csrf
                                     @method('PATCH')
                                     <label class="inline-flex items-center cursor-pointer">
-                                        <input type="checkbox" class="sr-only peer" onChange="this.form.submit()" {{ $q->active ? 'checked' : '' }}>
+                                        <input type="checkbox" class="sr-only peer" onChange="toggleActive({{ $q->id }})" {{ $q->active ? 'checked' : '' }}>
                                         <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:bg-green-600"></div>
                                         <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $q->active ? 'Active' : 'Inactive' }}</span>
                                     </label>
-                                </form>
+                                </form>                                
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <a href="/dashboard/pertanyaan/{{ $q->id }}" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200">
-                                    Detail
+                                    Pertinjau
                                 </a>
                             </td>
                         </tr>
@@ -100,4 +100,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    function toggleActive(id) {
+        document.getElementById('toggle-active-form-' + id).submit();
+    }
+</script>
+
 @endsection

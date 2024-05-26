@@ -35,7 +35,7 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->file('image')->store('post-image');
+        // return $request->file('image')->store('post-image');
         // return $request;
         $validateData = $request->validate([
             'title' => 'required|max:255',
