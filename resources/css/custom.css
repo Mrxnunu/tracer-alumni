@@ -1,0 +1,21 @@
+/* Override DataTables default styling to match Tailwind CSS */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: 0.375rem;
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background-color: #45A049;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid #CCCCCC;
+  margin-left: 0.5rem;
+}

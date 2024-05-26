@@ -4,9 +4,15 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+        "./node_modules/flowbite/**/*.js"
     ],
     theme: {
-        extend: {},
+        extend: {
+            backgroundColor: ['active'],
+            fontFamily: {
+                'montserrat': ['Montserrat']
+            }
+        },
     },
-    plugins: [],
+    plugins: [require("daisyui"), require('flowbite/plugin')],
 };
