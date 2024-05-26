@@ -29,14 +29,43 @@ class DashboardPertanyaanController extends Controller
      */
 
 
+    // public function toggleActive($id)
+    // {
+    //     $questionnaire = Questionnaire::findOrFail($id);
+    //     $questionnaire->active = !$questionnaire->active;
+    //     $questionnaire->save();
+
+    //     return redirect()->back()->with('success', 'Status berhasil diubah.');
+    // }
+
     public function toggleActive($id)
     {
-        $questionnaire = Questionnaire::findOrFail($id);
-        $questionnaire->active = !$questionnaire->active;
-        $questionnaire->save();
+        // Begin a transaction
+        DB::beginTransaction();
 
-        return redirect()->back()->with('success', 'Status berhasil diubah.');
+        try {
+            // Deactivate all questionnaires
+            Questionnaire::where('active', true)->update(['active' => false]);
+
+            // Find the selected questionnaire
+            $questionnaire = Questionnaire::findOrFail($id);
+
+            // Toggle the active status
+            $questionnaire->active = !$questionnaire->active;
+            $questionnaire->save();
+
+            // Commit the transaction
+            DB::commit();
+
+            return redirect()->back()->with('success', 'Status berhasil diubah.');
+        } catch (\Exception $e) {
+            // Rollback the transaction in case of error
+            DB::rollBack();
+
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat mengubah status.');
+        }
     }
+
 
     public function create()
     {

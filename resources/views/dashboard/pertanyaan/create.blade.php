@@ -33,15 +33,15 @@
         @csrf
         <h2 class="text-2xl leading-tight font-medium mb-2">Buat Kuisioner</h2>
         <div class="mb-5">
-            <label for="title" class="font-medium text-sm">Title</label>
+            <label for="title" class="font-medium text-sm">Tema</label>
             <input type="text" name="title" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2 dark:bg-gray-700 dark:border-grey-500" required>
         </div>
         <div class="mb-5">
-            <label for="description" class="font-medium text-sm">Description</label>
+            <label for="description" class="font-medium text-sm">Deskripsi</label>
             <textarea name="description" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2 dark:bg-gray-700 dark:border-grey-500"></textarea>
         </div>
         <div class="mb-5">
-            <label for="questions" class="block mb-2 text-sm font-medium">Pertanyaan</label>
+            <label for="questions" class="block mb-2 text-sm font-medium text-red-600">Klik tombol Tambah Pertayaan untuk membuat pertanyaan</label>
             <div id="questions"></div>
             <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2 me-2 mb-2 focus:outline-none" onclick="addQuestion()">Tambah Pertanyaan</button>
         </div>
@@ -78,13 +78,26 @@
         document.getElementById('questions').insertAdjacentHTML('beforeend', questionHTML);
     }
     function addAnswer(button) {
-        const answersDiv = button.closest('.answers');
-        const answerCount = answersDiv.querySelectorAll('input').length;
-        const questionDiv = button.closest('.question');
-        const questionIndex = Array.from(questionDiv.parentNode.children).indexOf(questionDiv);
-        const answerHTML = `<div class="flex"><input type="text" name="questions[${questionIndex}][answers][${answerCount}][answer_text]" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500 mt-2" placeholder="Opsi Jawaban Lain" required><button type="button" onclick="addAnswer(this)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" /></svg></button></div>`;
-        answersDiv.insertAdjacentHTML('beforeend', answerHTML);
-    }
+    const answersDiv = button.closest('.answers');
+    const answerCount = answersDiv.querySelectorAll('input').length;
+    const questionDiv = button.closest('.question');
+    const questionIndex = Array.from(questionDiv.parentNode.children).indexOf(questionDiv);
+    const answerHTML = `
+        <div class="flex items-center">
+            <input type="text" name="questions[${questionIndex}][answers][${answerCount}][answer_text]" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500 mt-2" placeholder="Opsi Jawaban Lain" required>
+            <button type="button" onclick="removeAnswer(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>`;
+    answersDiv.insertAdjacentHTML('beforeend', answerHTML);
+}
+
+function removeAnswer(button) {
+    button.closest('.flex').remove();
+}
+
 
     function showQuestionForm(index) {
         const questionType = document.getElementById(`question_type_${index}`).value;

@@ -9,10 +9,10 @@ class DashboardPerusahaanController extends Controller
 {
     public function index()
     {
-        $perusahaan = Answer::select('answers.jawaban', 'parameters.parameter')
-            ->join('parameters', 'answers.id_parameter', '=', 'parameters.id')
-            ->where('parameters.parameter', 'Profil Perushaan')
-            ->get();
-        return view('dashboard.perusahaan.index', compact('perusahaan'));
+        // $perusahaan = Answer::select('answers.jawaban', 'parameters.parameter')
+        //     ->join('parameters', 'answers.id_parameter', '=', 'parameters.id')
+        //     ->where('parameters.parameter', 'Profil Perushaan')
+        //     ->get();
+        return view('dashboard.perusahaan.index');
     }
 }

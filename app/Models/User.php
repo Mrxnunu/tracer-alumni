@@ -47,4 +47,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+    public function info_loker()
+    {
+        return $this->hasMany(tbl_info_loker::class);
+    }
 }
