@@ -39,13 +39,6 @@
             <p id="title" class="mt-2 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>
             @enderror
           </div>
-          <div class="mb-5">
-            <label for="slug" class="block mb-2 text-sm font-medium text-grey-700 dark:text-grey-500">Slug</label>
-            <input type="text" id="slug" name="slug" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500 @error('slug') is-invalid @enderror" required autofocus value="{{ old('slug') }}">
-            @error('slug')
-            <p id="title" class="mt-2 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>
-            @enderror
-          </div>
             <div class="mb-5">
                 <label for="Category" class="block mb-2 text-sm font-medium text-grey-700 dark:text-grey-500">Select Category</label>
                 <select id="category_id" name="category_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">

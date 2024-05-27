@@ -35,7 +35,6 @@ class DashboardLoker extends Controller
         // return $request;
         $validateData = $request->validate([
             'title' => 'required|max:255',
-            'slug' => 'required',
             'image' => 'image|file|max:1024',
             'body' => 'required'
         ]);
