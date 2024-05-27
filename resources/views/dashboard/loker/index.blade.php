@@ -37,9 +37,9 @@
                     <a href="/dashboard/loker/create" class="flex-shrink-0 px-4 py-2 text-xs font-semibold text-white bg-amber-600 rounded-lg shadow-md hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-green-200">Tambah Loker</a>
                 </div>
             </div>
-            <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+            <div class="sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                    <table id="example" class="min-w-full leading-normal">
+                    <table id="example" class="w-full display">
                         <thead>
                             <tr>
                                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -68,13 +68,17 @@
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <p class="text-gray-900 whitespace-no-wrap">{{ $lo->slug}}</p>
                                 </td>
-                                <td class="md:flex md:gap-2 px-5 py-5 border-b border-gray-200 bg-dark text-sm">
-                                    <button type="button" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200 mb-2 md:mb-0">
+                                <td class="md:flex md:gap-2 px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <a href="{{ route('loker.edit', $lo->id) }}" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200 mb-2 md:mb-0">
                                         Edit
-                                    </button>
-                                    <button type="button" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-red-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200">
-                                        Delete
-                                    </button>
+                                    </a>
+                                    <form action="{{ route('loker.destroy', $lo->id) }}" method="POST" class="inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" onclick="return confirm('Apakah Kamu yakin mau hapus Artikel?')" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-red-500 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-red-200">
+                                            Delete
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
