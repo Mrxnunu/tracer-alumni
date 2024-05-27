@@ -22,7 +22,7 @@
 
 @if ($lokers->count())
 <div class="bg-white shadow-md rounded-lg mb-6 overflow-hidden">
-    <img src="https://source.unsplash.com/1200x400?cars" class="w-full" alt="cars">
+    <img src="https://picsum.photos/1200/400" class="w-full" alt="cars">
   
 
   <div class="p-6 text-center">

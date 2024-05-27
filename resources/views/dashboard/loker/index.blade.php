@@ -68,13 +68,17 @@
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <p class="text-gray-900 whitespace-no-wrap">{{ $lo->slug}}</p>
                                 </td>
-                                <td class="md:flex md:gap-2 px-5 py-5 border-b border-gray-200 bg-dark text-sm">
-                                    <button type="button" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200 mb-2 md:mb-0">
+                                <td class="md:flex md:gap-2 px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <a href="{{ route('loker.edit', $lo->id) }}" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200 mb-2 md:mb-0">
                                         Edit
-                                    </button>
-                                    <button type="button" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-red-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200">
-                                        Delete
-                                    </button>
+                                    </a>
+                                    <form action="{{ route('loker.destroy', $lo->id) }}" method="POST" class="inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" onclick="return confirm('Apakah Kamu yakin mau hapus Artikel?')" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-red-500 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-red-200">
+                                            Delete
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
