@@ -7,9 +7,6 @@
   <title>Ubharajaya | Admin Tracer Alumni</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   @vite('resources/css/app.css')
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
-  {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"> --}}
-  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.tailwindcss.css">
   {{-- trix editor --}}
   <link rel="stylesheet" type="text/css" href="/css/trix.css">
   <script type="text/javascript" src="/js/trix.js"></script>
@@ -29,14 +26,5 @@
             </div>
         </div>
     </div>
-    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
-    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
-    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.tailwindcss.js"></script>
-    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
-    <script>
-      $(document).ready(function() {
-          $('#example').DataTable();
-      });
-    </script>
 </body>
 </html>

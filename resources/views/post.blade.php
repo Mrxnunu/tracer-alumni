@@ -10,13 +10,13 @@
       </div>
   </div>
 
-  @if($post->image)
-  <div class="mb-6">
-      <img class="w-full rounded" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}">
-      @else 
-      <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
+ @empty($post->image)
+    <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
+ @endempty
+
+  <div class="mb-6">  
+    <img class="w-full rounded" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}">
   </div>
-  @endif
 
   <div class="prose prose-lg">
       {!! $post->body !!}
