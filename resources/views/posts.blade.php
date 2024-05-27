@@ -22,7 +22,7 @@
 
 @if ($posts->count())
 <div class="bg-white shadow-md rounded-lg mb-6 overflow-hidden">
-    <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="w-full" alt="{{ $posts[0]->category->name }}">
+    <img src="{{ asset('storage/' . $posts[0]->image) }}" class="w-full" alt="{{ $posts[0]->category->name }}">
   
 
   <div class="p-6 text-center">
