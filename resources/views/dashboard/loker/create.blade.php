@@ -31,7 +31,7 @@
   <div class="py-5">
     <form method="post" action="/dashboard/loker" class="w-11/12 m-auto" enctype="multipart/form-data">
         @csrf
-        <h2 class="text-2xl leading-tight font-medium mb-2">Buat Artikel</h2>
+        <h2 class="text-2xl leading-tight font-medium mb-2">Buat Data Loker</h2>
           <div class="mb-5">
             <label for="title" class="block mb-2 text-sm font-medium text-grey-700 dark:text-grey-500">Title</label>
             <input type="text" id="title" name="title" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500 @error('title') is-invalid @enderror" required autofocus value="{{ old('title') }}">
@@ -39,13 +39,13 @@
             <p id="title" class="mt-2 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>
             @enderror
           </div>
-          <div class="mb-5">
+          {{-- <div class="mb-5">
             <label for="slug" class="block mb-2 text-sm font-medium text-grey-700 dark:text-grey-500">Slug</label>
             <input type="text" id="slug" name="slug" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500 @error('slug') is-invalid @enderror" required autofocus value="{{ old('slug') }}">
             @error('slug')
             <p id="title" class="mt-2 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>
             @enderror
-          </div>
+          </div> --}}
           <div class="mb-5">
             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Image Post</label>
             <img class="img-preview object-cover mb-3 sm:w-1/3">
@@ -70,14 +70,7 @@
 </div>
 
 <script>
-  const title = document.querySelector('#title');
-  const slug = document.querySelector('#slug');
   
-  title.addEventListener('change', function() {
-      fetch('/dashboard/posts/checkSlug?title=' + title.value)
-      .then(response => response.json())
-      .then(data => slug.value = data.slug)
-  });
 
   document.addEventListener('trix-file-accept', function(e) {
     e.preventDefault();
