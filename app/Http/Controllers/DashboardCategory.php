@@ -50,24 +50,35 @@ class DashboardCategory extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Category $category)
     {
-        //
+        return view('dashboard.categories.edit', [
+            'category' => $category
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $validateData = $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:categories,slug,' . $category->id,
+        ]);
+
+        $category->update($validateData);
+
+        return redirect('/dashboard/categories')->with('success', 'Kategori Artikel Berhasil di Update');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect('/dashboard/categories')->with('success', 'Kategori Artikel Berhasil di Hapus');
     }
 }

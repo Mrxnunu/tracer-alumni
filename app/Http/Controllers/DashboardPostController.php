@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Post;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class DashboardPostController extends Controller
@@ -52,7 +53,7 @@ class DashboardPostController extends Controller
         $validateData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
         Post::create($validateData);
-        return redirect('/dashboard/posts')->with('success', 'New post has been aded!');
+        return redirect('/dashboard/posts')->with('success', 'Artikel Berhasil di Tambahkan');
     }
 
     /**
@@ -68,24 +69,55 @@ class DashboardPostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $categories = Category::all();
+        return view('dashboard.posts.edit', compact('post', 'categories'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $validateData = $request->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:posts,slug,' . $id,
+            'category_id' => 'required',
+            'image' => 'image|file|max:1024',
+            'body' => 'required'
+        ]);
+
+        // Handle image update if new image is provided
+        if ($request->hasFile('image')) {
+            // Delete old image
+            Storage::delete($post->image);
+            // Store new image
+            $validateData['image'] = $request->file('image')->store('post-images');
+        }
+
+        // Update post data
+        $post->update($validateData);
+
+        return redirect('/dashboard/posts')->with('success', 'Artikel Berhasil di Update');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        // Hapus gambar terkait jika ada
+        if ($post->image) {
+            Storage::delete($post->image);
+        }
+        $post->delete();
+
+        return redirect('/dashboard/posts')->with('success', 'Artikel Berhasil di Hapus');
     }
+
 
     public function checkSlug(Request $request)
     {
