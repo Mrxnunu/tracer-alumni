@@ -16,22 +16,22 @@
                 <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                 </svg>
-                <a href="/dashboard/categories" class="ms-1 text-sm font-medium text-gray-700 md:ms-2 dark:text-gray-400 dark:hover:text-white hover:text-amber-600">Kategori Artikel</a>
+                <a href="/dashboard/categories" class="ms-1 text-sm font-medium text-gray-700 md:ms-2 dark:text-gray-400 dark:hover:text-amber-600 hover:text-amber-600">Kategori Artikel</a>
             </div>
             </li>
             <div class="flex items-center">
                 <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                 </svg>
-                <a href="/dashboard/categories/create" class="ms-1 text-sm font-medium text-amber-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Create Kategori Artikel</a>
+                <a href="/dashboard/categories/create" class="ms-1 text-sm font-medium text-amber-600 md:ms-2 dark:text-amber-600">Create Kategori Artikel</a>
             </div>
             </li>
         </ol>
   </nav>
   <div class="py-5">
-    <form method="post" action="/dashboard/categories" class="w-11/12 m-auto" enctype="multipart/form-data">
+    <form method="post" action="/dashboard/categories" class="w-full" enctype="multipart/form-data">
         @csrf
-        <h2 class="text-2xl leading-tight font-medium mb-2">Buat Kategori Artikel</h2>
+        <h2 class="text-2xl leading-tight font-medium mb-2 dark:text-white">Buat Kategori Artikel</h2>
         <div class="mb-5">
           <label for="name" class="block mb-2 text-sm font-medium text-grey-700 dark:text-grey-500">Nama Kategori</label>
           <input type="text" id="name" name="name" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500 @error('name') is-invalid @enderror" required autofocus value="{{ old('name') }}">
@@ -46,7 +46,7 @@
           @enderror
         </div>
 
-     <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2 me-2 mb-2 focus:outline-none">Simpan</button>
+     <button type="submit" class="text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2 me-2 mb-2 focus:outline-none">Simpan</button>
     </form>
 
   </div>

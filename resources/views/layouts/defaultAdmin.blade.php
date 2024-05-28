@@ -7,6 +7,7 @@
   <title>Ubharajaya | Admin Tracer Alumni</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   @vite('resources/css/app.css')
+  @vite(['resources/css/app.css','resources/js/app.js'])
   {{-- trix editor --}}
   <link rel="stylesheet" type="text/css" href="/css/trix.css">
   <script type="text/javascript" src="/js/trix.js"></script>

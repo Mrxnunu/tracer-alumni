@@ -29,7 +29,7 @@
         </ol>
     </nav>
   <div class="py-5">
-    <form method="post" action="/dashboard/pertanyaan" class="w-11/12 m-auto" enctype="multipart/form-data">
+    <form method="post" action="/dashboard/pertanyaan" class="w-full" enctype="multipart/form-data">
         @csrf
         <h2 class="text-2xl leading-tight font-medium mb-2">Buat Kuisioner</h2>
         <div class="mb-5">

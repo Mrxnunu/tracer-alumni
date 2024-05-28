@@ -57,53 +57,53 @@ class DatabaseSeeder extends Seeder
             'slug' => 'kesehatan-jasmani'
         ]);
 
-        Post::create([
-            'title' => 'Judul Pertama',
-            'slug' => 'judul-pertama',
-            'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
-            'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
-            'category_id' => 1,
-            'user_id' => 1,
-        ]);
-        Post::create([
-            'title' => 'Judul Kedua',
-            'slug' => 'judul-kedua',
-            'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
-            'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
-            'category_id' => 2,
-            'user_id' => 1,
-        ]);
-        Post::create([
-            'title' => 'Judul Ketiga',
-            'slug' => 'judul-ketiga',
-            'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
-            'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
-            'category_id' => 3,
-            'user_id' => 2,
-        ]);
+        // Post::create([
+        //     'title' => 'Judul Pertama',
+        //     'slug' => 'judul-pertama',
+        //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
+        //     'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
+        //     'category_id' => 1,
+        //     'user_id' => 1,
+        // ]);
+        // Post::create([
+        //     'title' => 'Judul Kedua',
+        //     'slug' => 'judul-kedua',
+        //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
+        //     'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
+        //     'category_id' => 2,
+        //     'user_id' => 1,
+        // ]);
+        // Post::create([
+        //     'title' => 'Judul Ketiga',
+        //     'slug' => 'judul-ketiga',
+        //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
+        //     'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
+        //     'category_id' => 3,
+        //     'user_id' => 2,
+        // ]);
 
         // info loker
-        tbl_info_loker::create([
-            'title' => 'Lowongan Pekerjaan Fullstack Devloper',
-            'slug' => 'lowongan-pekerjaan-fullstack-developer',
-            'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
-            'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
-            'user_id' => 2,
-        ]);
-        tbl_info_loker::create([
-            'title' => 'Lowongan Pekerjaan Backend Developer',
-            'slug' => 'lowongan-pekerjaan-backend-developer',
-            'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
-            'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
-            'user_id' => 1,
-        ]);
-        tbl_info_loker::create([
-            'title' => 'Lowongan Pekerjaan Frontend Devloper',
-            'slug' => 'lowongan-pekerjaan-frontend-developer',
-            'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
-            'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
-            'user_id' => 1,
-        ]);
+        // tbl_info_loker::create([
+        //     'title' => 'Lowongan Pekerjaan Fullstack Devloper',
+        //     'slug' => 'lowongan-pekerjaan-fullstack-developer',
+        //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
+        //     'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
+        //     'user_id' => 2,
+        // ]);
+        // tbl_info_loker::create([
+        //     'title' => 'Lowongan Pekerjaan Backend Developer',
+        //     'slug' => 'lowongan-pekerjaan-backend-developer',
+        //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
+        //     'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
+        //     'user_id' => 1,
+        // ]);
+        // tbl_info_loker::create([
+        //     'title' => 'Lowongan Pekerjaan Frontend Devloper',
+        //     'slug' => 'lowongan-pekerjaan-frontend-developer',
+        //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque',
+        //     'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quia hic odit consequuntur id voluptatum quaerat fugiat laborum enim doloremque ducimus recusandae ex excepturi, asperiores reiciendis officiis atque perspiciatis tempora temporibus totam possimus consectetur beatae saepe corrupti. Nemo, aspernatur fugiat.',
+        //     'user_id' => 1,
+        // ]);
 
 
         // Topik::create([

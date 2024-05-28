@@ -8,23 +8,23 @@
 </div>
 @endif
 <div class="mb-4 mx-auto px-4 lg:px-10">
-    <h1 class="font-semibold text-xl">Kuisioner Tracer Alumni</h1>
+    <h1 class="font-semibold text-xl dark:text-white">Kuisioner Tracer Alumni</h1>
 </div>
 @if($questionnaire)
 <div class="grid md:flex justify-between mx-auto px-4 lg:px-10">
-    <form action="{{ route('pertanyaan.submit', $questionnaire->id) }}" method="POST" class="w-11/12 mx-auto">
+    <form action="{{ route('pertanyaan.submit', $questionnaire->id) }}" method="POST" class="w-full">
         @csrf
         <div class="mb-3">
             <label for="nama" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
                 Nama
             </label>
-            <input type="text" id="nama" name="nama" class="block w-full p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-amber-500 focus:border-amber-500">
+            <input type="text" id="nama" name="nama" class="block w-full p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
         </div>
         <div class="mb-3">
             <label for="email" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
                 Email
             </label>
-            <input type="text" id="email" name="email" class="block w-full p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-amber-500 focus:border-amber-500 dark:border-gray-600">
+            <input type="text" id="email" name="email" class="block w-full p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
             @error('email')
                 <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
             @enderror
@@ -33,7 +33,7 @@
             <label for="npm" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
                 NPM
             </label>
-            <input type="text" id="npm" name="npm" class="block w-full p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+            <input type="text" id="npm" name="npm" class="block w-full p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
             @error('npm')
                 <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
             @enderror
@@ -41,18 +41,18 @@
         
         @foreach($questionnaire->questions as $question)
         <div class="mb-4">
-            <h4 class="text-base font-medium">{{ $question->question_text }}</h4>
+            <h4 class="text-base font-medium dark:text-white">{{ $question->question_text }}</h4>
             @if($question->type == 'multiple_choice')
             @foreach($question->answers as $answer)
             <div>
-                <label>
+                <label class="dark:text-white">
                     <input type="radio" class="focus:ring-amber-500 focus:border-amber-500 text-amber-600" name="answers[{{ $question->id }}]" value="{{ $answer->id }}">
                     {{ $answer->answer_text }}
                 </label>
             </div>
             @endforeach
             @else
-            <textarea name="answers[{{ $question->id }}]" rows="4" class="w-full border border-gray-300 p-2 rounded-lg focus:ring-amber-500 focus:border-amber-500"></textarea>
+            <textarea name="answers[{{ $question->id }}]" rows="4" class="w-full border border-gray-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:bg-gray-600 p-2 rounded-lg focus:ring-amber-500 focus:border-amber-500"></textarea>
             @endif
         </div>
         @endforeach
