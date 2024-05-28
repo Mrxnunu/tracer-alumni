@@ -12,26 +12,24 @@
       @if (request('author'))
       <input type="hidden" name="author" value="{{ request('author') }}">
       @endif
-      <div class="flex mb-6">
+      <div class="flex mb-6 md:w-1/2 md:mx-auto">
         <input type="text" class="flex-grow px-4 py-2 border border-gray-300 rounded-l-md" placeholder="Search.." name="search" value="{{ request('search') }}">
-        <button class="px-4 py-2 bg-blue-500 text-white rounded-r-md" type="submit">Search</button>
+        <button class="px-4 py-2 bg-amber-500 text-white rounded-r-md" type="submit">Search</button>
       </div>
     </form>
   </div>
 </div>
 
 @if ($posts->count())
-<div class="bg-white shadow-md rounded-lg mb-6 overflow-hidden">
-    <img src="{{ asset('storage/' . $posts[0]->image) }}" class="w-full" alt="{{ $posts[0]->category->name }}">
-  
-
+<div class="bg-white shadow-md rounded-lg mb-6 dark:bg-slate-900">
+  <img src="{{ asset('storage/' . $posts[0]->image) }}" class="w-2/3 mx-auto" alt="{{ $posts[0]->category->name }}">
   <div class="p-6 text-center">
-    <h3 class="text-2xl font-bold mb-2"><a href="/posts/{{ $posts[0]->slug }}" class="text-black hover:underline">{{ $posts[0]->title }}</a></h3>
+    <h3 class="text-2xl font-bold mb-2"><a href="/posts/{{ $posts[0]->slug }}" class="text-black hover:underline dark:text-white">{{ $posts[0]->title }}</a></h3>
     <p class="text-gray-600 mb-4">
       <small>By. <a href="/artikel?authors={{ $posts[0]->author->username ?? 'Tidak ada author' }}" class="text-blue-500 hover:underline">{{ $posts[0]->author->name }}</a> in <a href="/artikel?category={{ $posts[0]->category->slug }}" class="text-blue-500 hover:underline">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}</small>
     </p>
     <p class="mb-4">{{ $posts[0]->excerpt }}</p>
-    <a href="/posts/{{ $posts[0]->slug }}" class="inline-block px-4 py-2 bg-blue-500 text-white rounded">Read more</a>
+    <a href="/posts/{{ $posts[0]->slug }}" class="inline-block px-4 py-2 bg-amber-500 text-white rounded">Read more</a>
   </div>
 </div>
 

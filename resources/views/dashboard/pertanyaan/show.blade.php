@@ -35,49 +35,23 @@
             <h2 class="text-xl leading-tight font-medium">{{ $questionnaire->description }}</h2>
         </div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-            <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                <table id="example" class="min-w-full leading-normal">
-                    <thead>
-                        <tr>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Pertanyaan
-                            </th>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Tipe Pertanyaan
-                            </th>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                        Jawaban
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($questionnaire->questions as $question)
-                            <tr>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">{{ $question->question_text }}</p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    @if ($question->type == 'multiple_choice')
-                                        <p>Pilihan Ganda</p>
-                                    @else
-                                        <p>Essay</p>
-                                    @endif
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    @if($question->type == 'multiple_choice')
-                                        <ul class="list-disc">
-                                        @foreach($question->answers as $answer)
-                                            <li>{{ $answer->answer_text }}</li>
-                                        @endforeach
-                                        </ul>
-                                        @else
-                                            <p>Essay</p>
-                                        @endif
-                                </td>
-                            </tr>
+            <div class="">
+                @foreach($questionnaire->questions as $question)
+                    <div class="mb-4">
+                        <h4 class="text-base font-medium">{{ $loop->iteration }}. {{ $question->question_text }}</h4>
+                        @if($question->type == 'multiple_choice')
+                        @foreach($question->answers as $answer)
+                        <div>
+                            <label>
+                                <ul>{{ $answer->answer_text }}</ul>
+                            </label>
+                        </div>
                         @endforeach
-                    </tbody>
-                </table>
+                        @else
+                        <textarea name="answers[{{ $question->id }}]" rows="4" class="w-full border border-gray-300 p-2 rounded-lg focus:ring-amber-500 focus:border-amber-500"></textarea>
+                        @endif
+                </div>
+                @endforeach
             </div>
         </div>   
         {{-- <h2 class="text-2xl leading-tight font-medium mb-2">Detail Kuisioner</h2>
