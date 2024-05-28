@@ -5,13 +5,7 @@
 
 <div class="flex justify-center mb-6">
   <div class="w-full max-w-md">
-    <form action="/blog">
-      @if (request('category'))
-      <input type="hidden" name="category" value="{{ request('category') }}">
-      @endif
-      @if (request('author'))
-      <input type="hidden" name="author" value="{{ request('author') }}">
-      @endif
+    <form action="/loker" method="GET">
       <div class="flex mb-6">
         <input type="text" class="flex-grow px-4 py-2 border border-gray-300 rounded-l-md" placeholder="Search.." name="search" value="{{ request('search') }}">
         <button class="px-4 py-2 bg-blue-500 text-white rounded-r-md" type="submit">Search</button>
@@ -23,8 +17,6 @@
 @if ($lokers->count())
 <div class="bg-white shadow-md rounded-lg mb-6 overflow-hidden">
     <img src="https://picsum.photos/1200/400" class="w-full" alt="cars">
-  
-
   <div class="p-6 text-center">
     <h3 class="text-2xl font-bold mb-2"><a href="/lokers/{{ $lokers[0]->slug }}" class="text-black hover:underline">{{ $lokers[0]->title }}</a></h3>
     <p class="text-gray-600 mb-4">
@@ -59,10 +51,10 @@
 </div>
 
 @else
-  <p class="text-center text-2xl">Not loker found</p>
+  <p class="text-center text-2xl">Maaf Tidak Ada Loker</p>
 @endif
 
-{{-- <div class="flex justify-center">
+<div class="flex justify-center">
   {{ $lokers->links() }}
-</div> --}}
+</div>
 @endsection
