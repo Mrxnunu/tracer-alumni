@@ -12,7 +12,7 @@
 <body class="font-montserrat">
     <div class="wrapper">
         @include('includes.navbar')
-        <div class="main-content p-4">
+        <div class="main-content p-4 dark:bg-gray-900">
             <div class="content">
 				@yield('content')
 			</div>

@@ -2,9 +2,9 @@
 @section('content')
   <div class="container mx-auto px-4 sm:px-8 max-w-3x">
     <div class="py-8">
-        <div class="flex flex-row mb-1 sm:mb-0 justify-between w-full">
+        <div class="flex flex-row mb-1 sm:mb-0 justify-between w-full items-center">
             <h2 class="text-2xl leading-tight">Master Alumni</h2>
-            <p class="md:text-red-600">Data Ini Merupakan alumni yang sudah mengisi Kuisioner</p>
+            <p class="text-red-600 text-xs">Data Ini Merupakan alumni yang sudah mengisi Kuisioner</p>
         </div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
             <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
