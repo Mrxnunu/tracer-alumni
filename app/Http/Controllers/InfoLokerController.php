@@ -10,11 +10,20 @@ class InfoLokerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $search = $request->input('search');
+
+        $lokers = tbl_info_loker::query()
+            ->when($search, function ($query, $search) {
+                return $query->where('title', 'like', "%{$search}%")
+                    ->orWhere('excerpt', 'like', "%{$search}%");
+            })
+            ->paginate(7);
+
         return view('v_loker', [
             "title" => "All Loker",
-            "lokers" =>  tbl_info_loker::all()
+            "lokers" => $lokers
         ]);
     }
 

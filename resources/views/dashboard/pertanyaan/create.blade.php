@@ -1,5 +1,7 @@
 @extends('layouts.defaultAdmin')
 @section('content')
+
+
 <div class="px-4 sm:px-8">
     <nav class="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
@@ -29,6 +31,15 @@
         </ol>
     </nav>
   <div class="py-5">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     <form method="post" action="/dashboard/pertanyaan" class="w-11/12 m-auto" enctype="multipart/form-data">
         @csrf
         <h2 class="text-2xl leading-tight font-medium mb-2">Buat Kuisioner</h2>
@@ -127,6 +138,59 @@
         const selectElements = document.querySelectorAll('select[name$="[type]"]');
         selectElements.forEach((selectElement, index) => showQuestionForm(index));
     });
+
+
+    // validasi wajib tombol tambah
+    document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        const description = document.querySelector('textarea[name="description"]').value.trim();
+        const questions = document.querySelectorAll('.question');
+
+        if (!description) {
+            alert('Deskripsi harus diisi.');
+            event.preventDefault(); // Mencegah form disubmit
+            return;
+        }
+
+        if (questions.length === 0) {
+            alert('Anda harus menambahkan setidaknya satu pertanyaan.');
+            event.preventDefault(); // Mencegah form disubmit
+            return;
+        }
+
+        // Validasi pertanyaan dan jawaban jika ada
+        let valid = true;
+        questions.forEach((question, index) => {
+            const questionText = question.querySelector(`input[name="questions[${index}][question_text]"]`).value.trim();
+            const questionType = question.querySelector(`select[name="questions[${index}][type]"]`).value;
+
+            if (!questionText) {
+                valid = false;
+                alert(`Pertanyaan ${index + 1} harus diisi.`);
+                event.preventDefault();
+                return;
+            }
+
+            if (questionType === 'multiple_choice') {
+                const answers = question.querySelectorAll(`input[name^="questions[${index}][answers]"]`);
+                answers.forEach((answer, answerIndex) => {
+                    if (!answer.value.trim()) {
+                        valid = false;
+                        alert(`Jawaban ${answerIndex + 1} pada pertanyaan ${index + 1} harus diisi.`);
+                        event.preventDefault();
+                        return;
+                    }
+                });
+            }
+        });
+
+        if (!valid) {
+                    event.preventDefault();
+                }
+            });
+        });
+
 </script>
 
 @endsection
