@@ -78,16 +78,55 @@ class DashboardPertanyaanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // public function store(Request $request)
+    // {
+    //     // return $request;
+    //     $data = $request->validate([
+    //         'title' => 'required',
+    //         'description' => 'nullable',
+    //         'questions.*.question_text' => 'required',
+    //         'questions.*.type' => 'required|in:multiple_choice,essay',
+    //         'questions.*.answers.*.answer_text' => 'required_if:questions.*.type,multiple_choice',
+    //     ]);
+
+    //     $questionnaire = Questionnaire::create([
+    //         'title' => $data['title'],
+    //         'description' => $data['description'],
+    //     ]);
+
+    //     foreach ($data['questions'] as $questionData) {
+    //         $question = $questionnaire->questions()->create([
+    //             'question_text' => $questionData['question_text'],
+    //             'type' => $questionData['type'],
+    //         ]);
+
+    //         if ($questionData['type'] == 'multiple_choice') {
+    //             $question->answers()->createMany($questionData['answers']);
+    //         }
+    //     }
+    //     return redirect('/dashboard/pertanyaan')->with('success', 'berhasil ditambahkan');
+    // }
+
     public function store(Request $request)
     {
-        // return $request;
+        $messages = [
+            'title.required' => 'Tema wajib diisi.',
+            'description.required' => 'Deskripsi wajib diisi.',
+            'questions.required' => 'Anda harus menambahkan setidaknya satu pertanyaan.',
+            'questions.*.question_text.required' => 'Teks pertanyaan wajib diisi.',
+            'questions.*.type.required' => 'Tipe pertanyaan wajib dipilih.',
+            'questions.*.type.in' => 'Tipe pertanyaan harus berupa pilihan ganda atau esai.',
+            'questions.*.answers.*.answer_text.required_if' => 'Jawaban untuk pertanyaan pilihan ganda wajib diisi.',
+        ];
+
         $data = $request->validate([
             'title' => 'required',
-            'description' => 'nullable',
+            'description' => 'required',
+            'questions' => 'required|array|min:1',
             'questions.*.question_text' => 'required',
             'questions.*.type' => 'required|in:multiple_choice,essay',
             'questions.*.answers.*.answer_text' => 'required_if:questions.*.type,multiple_choice',
-        ]);
+        ], $messages);
 
         $questionnaire = Questionnaire::create([
             'title' => $data['title'],
@@ -106,6 +145,7 @@ class DashboardPertanyaanController extends Controller
         }
         return redirect('/dashboard/pertanyaan')->with('success', 'berhasil ditambahkan');
     }
+
 
     /**
      * Display the specified resource.

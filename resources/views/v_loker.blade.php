@@ -4,15 +4,9 @@
 <h1 class="mb-6 text-center">{{ $title }}</h1>
 
 <div class="flex justify-center mb-6">
-  <div class="w-full">
-    <form action="/blog">
-      @if (request('category'))
-      <input type="hidden" name="category" value="{{ request('category') }}">
-      @endif
-      @if (request('author'))
-      <input type="hidden" name="author" value="{{ request('author') }}">
-      @endif
-      <div class="flex mb-6 md:w-1/2 md:mx-auto">
+  <div class="w-full max-w-md">
+    <form action="/loker" method="GET">
+      <div class="flex mb-6">
         <input type="text" class="flex-grow px-4 py-2 border border-gray-300 rounded-l-md" placeholder="Search.." name="search" value="{{ request('search') }}">
         <button class="px-4 py-2 bg-amber-500 text-white rounded-r-md" type="submit">Search</button>
       </div>
@@ -57,10 +51,10 @@
 </div>
 
 @else
-  <p class="text-center text-2xl">Not loker found</p>
+  <p class="text-center text-2xl">Maaf Tidak Ada Loker</p>
 @endif
 
-{{-- <div class="flex justify-center">
+<div class="flex justify-center">
   {{ $lokers->links() }}
-</div> --}}
+</div>
 @endsection
