@@ -52,7 +52,7 @@
                                     Slug
                                 </th>
                                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 dark:bg-slate-900 text-left text-xs font-semibold text-gray-600 dark:text-gray-500 uppercase tracking-wider">
-                                    Actions
+                                    Aksi
                                 </th>
                             </tr>
                         </thead>
@@ -76,7 +76,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" onclick="return confirm('Apakah Kamu yakin mau hapus Artikel?')" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-red-500 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-red-200">
-                                            Delete
+                                            Hapus
                                         </button>
                                     </form>
                                 </td>

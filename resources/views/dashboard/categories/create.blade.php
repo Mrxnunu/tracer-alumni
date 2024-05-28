@@ -34,13 +34,13 @@
         <h2 class="text-2xl leading-tight font-medium mb-2 dark:text-white">Buat Kategori Artikel</h2>
         <div class="mb-5">
           <label for="name" class="block mb-2 text-sm font-medium text-grey-700 dark:text-grey-500">Nama Kategori</label>
-          <input type="text" id="name" name="name" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500 @error('name') is-invalid @enderror" required autofocus value="{{ old('name') }}">
+          <input type="text" id="name" name="name" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500 @error('name') is-invalid @enderror" required autofocus value="{{ old('name') }}">
           @error('name')
           <p id="name" class="mt-2 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>
           @enderror
         </div>
           <label for="slug" class="block mb-2 text-sm font-medium text-grey-700 dark:text-grey-500">slug</label>
-          <input type="text" id="slug" name="slug" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500 @error('slug') is-invalid @enderror" required autofocus value="{{ old('slug') }}">
+          <input type="text" id="slug" name="slug" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500 @error('slug') is-invalid @enderror" required autofocus value="{{ old('slug') }}">
           @error('slug')
           <p id="slug" class="mt-2 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>
           @enderror
