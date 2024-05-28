@@ -33,7 +33,7 @@ class PostController extends Controller
             ->paginate(7)->withQueryString();
 
         return view('posts', [
-            "title" => "All Posts" . $title,
+            "title" => "Semua Artikel" . $title,
             "posts" =>  $post
         ]);
     }
@@ -60,7 +60,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         return view('post', [
-            "title" => "Single Post",
+            "title" => "Detail Artikel",
             "post" => $post
         ]);
     }
