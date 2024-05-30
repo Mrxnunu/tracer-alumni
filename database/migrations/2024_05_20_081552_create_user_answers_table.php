@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('nama');
             $table->string('email')->unique();
             $table->string('npm')->unique();
+            $table->string('prodi');
+            $table->string('tahun_lulus');
             $table->foreignId('question_id')->constrained()->onDelete('cascade');
             $table->foreignId('answer_id')->nullable()->constrained()->onDelete('cascade');
             $table->text('answer_text')->nullable();

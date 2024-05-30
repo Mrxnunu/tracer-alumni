@@ -25,7 +25,7 @@
           </svg>
         </div>
         <div>
-          <h2 class="font-bold text-xl dark:text-slate-800">5</h2>
+          <h2 class="font-bold text-xl dark:text-slate-800">{{ $dataAlumni }}</h2>
         </div>
       </div>
         <div class="basis-1/4 bg-white shadow-md rounded-md py-5 px-3">

@@ -33,7 +33,6 @@ class DashboardCategory extends Controller
         // return $request;
         $validateData = $request->validate([
             'name' => 'required|max:255',
-            'slug' => 'required|unique:posts',
         ]);
         Category::create($validateData);
         return redirect('/dashboard/categories')->with('success', 'New Category has been aded!');
@@ -64,7 +63,6 @@ class DashboardCategory extends Controller
     {
         $validateData = $request->validate([
             'name' => 'required|max:255',
-            'slug' => 'required|unique:categories,slug,' . $category->id,
         ]);
 
         $category->update($validateData);
