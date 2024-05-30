@@ -23,7 +23,7 @@
   </div>
 
   <div class="mt-6">
-      <a href="/artikel" class="text-blue-500 hover:underline">Back to Blog</a>
+      <a href="/artikel" class="text-amber-500 hover:underline">Back to Blog</a>
   </div>
 </div>
 @endsection
