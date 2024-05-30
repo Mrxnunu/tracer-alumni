@@ -22,7 +22,7 @@ class InfoLokerController extends Controller
             ->paginate(7);
 
         return view('v_loker', [
-            "title" => "All Loker",
+            "title" => "Semua Loker",
             "lokers" => $lokers
         ]);
     }
@@ -49,7 +49,7 @@ class InfoLokerController extends Controller
     public function show(tbl_info_loker $loker)
     {
         return view('v_single_loker', [
-            "title" => "Single Post",
+            "title" => "Detail Loker",
             "loker" => $loker
         ]);
     }

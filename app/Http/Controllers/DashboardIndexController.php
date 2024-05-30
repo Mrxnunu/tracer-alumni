@@ -24,11 +24,16 @@ class DashboardIndexController extends Controller
         //                             WHERE p.parameter = "Profil Perushaan") AS subquery'))
         //     ->count();
         // total artikel
+        $dataAlumni = DB::table('user_answers')
+            ->select('nama', 'email', 'npm')
+            ->distinct()
+            ->get()
+            ->count();
         $artikel = Post::count();
 
         // total kuisioner yang telah dilakukan
         // $kuis =  Answer::count();
 
-        return view('dashboard.index', compact('artikel'));
+        return view('dashboard.index', compact('artikel', 'dataAlumni'));
     }
 }
