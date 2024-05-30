@@ -78,6 +78,8 @@ Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'check
 
 
 Route::get('/dashboard/alumni', [DashboardAlumniController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/alumni/{npm}', [DashboardAlumniController::class, 'show'])->middleware('auth');
+
 // Route::get('/dashboard/perushaan', [DashboardPerusahaanController::class, 'index'])->middleware('auth');
 
 

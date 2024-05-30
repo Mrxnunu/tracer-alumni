@@ -38,6 +38,24 @@
                 <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
             @enderror
         </div>
+        <div class="mb-5">
+            <label for="prodi" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
+                Prodi
+            </label>
+            <input type="text" id="prodi" name="prodi" class="block w-full p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+            @error('prodi')
+                <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="mb-5">
+            <label for="tahun_lulus" class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
+                Tahun Lulus
+            </label>
+            <input type="text" id="tahun_lulus" name="tahun_lulus" class="block w-full p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+            @error('tahun_lulus')
+                <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
+            @enderror
+        </div>
         
         @foreach($questionnaire->questions as $question)
         <div class="mb-4">

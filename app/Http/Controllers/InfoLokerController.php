@@ -49,7 +49,7 @@ class InfoLokerController extends Controller
     public function show(tbl_info_loker $loker)
     {
         return view('v_single_loker', [
-            "title" => "Single Post",
+            "title" => "Detail Loker",
             "loker" => $loker
         ]);
     }

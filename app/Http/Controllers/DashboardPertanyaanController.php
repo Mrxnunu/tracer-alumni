@@ -40,17 +40,17 @@ class DashboardPertanyaanController extends Controller
 
     public function toggleActive($id)
     {
-        // Begin a transaction
+
         DB::beginTransaction();
 
         try {
-            // Deactivate all questionnaires
+            // Menon aktifkna pertanyaan
             Questionnaire::where('active', true)->update(['active' => false]);
 
-            // Find the selected questionnaire
+            // menentukan kuisioner yang akan dipilih
             $questionnaire = Questionnaire::findOrFail($id);
 
-            // Toggle the active status
+            // tobmbol toogle jadi aktif
             $questionnaire->active = !$questionnaire->active;
             $questionnaire->save();
 
