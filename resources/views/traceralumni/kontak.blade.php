@@ -4,7 +4,7 @@
 
 <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-5">
-        <img src="/back/img/Ubhara.jpg" alt="" width="">
+        <img src="/back/img/Ubhara.jpg" alt="" width="" class="rounded-md">
         <h1 class="mb-4 mt-4 text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-4xl dark:text-white">Universitas Bhayangkara Jakarta Raya</h1>
         <p class="mb-8 text-base font-normal text-gray-500 lg:text-base sm:px-16 lg:px-48 dark:text-gray-400">Universitas Bhayangkara Jakarta Raya (Ubhara Jaya) sebagai salah satu Perguruan Tinggi Swasta yang berada dibawah pembinaan Yayasan Brata Bhakti sebagai badan penyelenggaranya, berkewajiban mewujudkan tujuan Pendidikan nasional dengan Visi dan Misi nya bagi mendukung keberhasilan tugas Kepolisian Negara Republik Indonesia khususnya dan pengembangan kualitas hidup bermasyarakat berbangsa dan bernegara pada umumnya.</p>
         <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center lg:justify-around sm:space-y-0">

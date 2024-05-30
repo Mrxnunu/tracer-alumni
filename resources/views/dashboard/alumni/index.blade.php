@@ -24,7 +24,7 @@
     </nav>
     <div class="py-5">
         <div class="flex flex-row mb-1 sm:mb-0 justify-between w-full items-center">
-            <h2 class="text-2xl leading-tight font-medium">Master Alumni</h2>
+            <h2 class="text-2xl leading-tight font-medium dark:text-white">Master Alumni</h2>
             <p class="text-red-600 text-xs">Data Ini Merupakan alumni yang sudah mengisi Kuisioner</p>
         </div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -32,18 +32,19 @@
                 <table id="example" class="display" style="width:100%">
                     <thead>
                         <tr>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-400 bg-gray-100 dark:bg-slate-900 text-left text-xs font-semibold text-gray-600 dark:text-gray-500 uppercase tracking-wider">
                                 #
                             </th>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-400 bg-gray-100 dark:bg-slate-900 text-left text-xs font-semibold text-gray-600 dark:text-gray-500 uppercase tracking-wider">
                                 Nama Alumni
                             </th>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-400 bg-gray-100 dark:bg-slate-900 text-left text-xs font-semibold text-gray-600 dark:text-gray-500 uppercase tracking-wider">
                                 Email
                             </th>
-                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-400 bg-gray-100 dark:bg-slate-900 text-left text-xs font-semibold text-gray-600 dark:text-gray-500 uppercase tracking-wider">
                                 Npm
                             </th>
+
                             <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                 Prodi
                             </th>
@@ -51,24 +52,25 @@
                                 Tahun Lulus
                             </th>
                             <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-400 bg-gray-100 dark:bg-slate-900 text-left text-xs font-semibold text-gray-600 dark:text-gray-500 uppercase tracking-wider">
                                 Actions
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="dark:bg-slate-900">
                         @foreach ($dataAlumni as $a)
                         <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">{{ $loop->iteration }}</p>
+                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
+                                <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $loop->iteration }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">{{ $a->nama }}</p>
+                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
+                                <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $a->nama }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">{{ $a->email }}</p>
+                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
+                                <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $a->email }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">{{ $a->npm }}</p>
+                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
+                                <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $a->npm }}</p>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <p class="text-gray-900 whitespace-no-wrap">{{ $a->prodi }}</p>
@@ -78,10 +80,11 @@
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <a href="{{ url('/dashboard/alumni/'.$a->npm) }}" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200">
+                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
+                                <a href="/dashboard/alumni/{{ $a->id }}" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200">
                                     Detail
                                 </a>
-                            </td>
-                            
+                            </td>   
                             {{-- <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                 <a href="/dashboard/alumni/{{ $a->npm }}" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200">
                                     Detail

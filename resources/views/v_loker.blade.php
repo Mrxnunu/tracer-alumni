@@ -7,7 +7,7 @@
   <div class="w-full max-w-md">
     <form action="/loker" method="GET">
       <div class="flex mb-6">
-        <input type="text" class="flex-grow px-4 py-2 border border-gray-300 rounded-l-md" placeholder="Search.." name="search" value="{{ request('search') }}">
+        <input type="text" class="flex-grow px-4 py-2 border border-gray-300 rounded-l-md  focus:ring-amber-500 focus:border-amber-500" placeholder="Search.." name="search" value="{{ request('search') }}">
         <button class="px-4 py-2 bg-amber-500 text-white rounded-r-md" type="submit">Search</button>
       </div>
     </form>
@@ -35,10 +35,10 @@
         <div class="p-6">
           <h5 class="text-xl font-bold mb-2">{{ $loker->title }}</h5>
           <p class="text-gray-600 mb-4">
-            <small>By. <a href="/loker?authors={{ $loker->author->username ?? 'Tidak ada author' }}" class="text-blue-500 hover:underline">{{ $loker->author->username ?? 'Tidak ada author' }}</a> {{ $loker->created_at->diffForHumans() }}</small>
+            <small>By. <a href="/loker?authors={{ $loker->author->username ?? 'Tidak ada author' }}" class="text-amber-500 hover:underline">{{ $loker->author->username ?? 'Tidak ada author' }}</a> {{ $loker->created_at->diffForHumans() }}</small>
           </p>
           <p class="mb-4">{{ $loker->excerpt }}</p>
-          <a href="/lokers/{{ $loker->slug }}" class="inline-block px-4 py-2 bg-blue-500 text-white rounded">Read more</a>
+          <a href="/lokers/{{ $loker->slug }}" class="inline-block px-4 py-2 bg-amber-500 text-white rounded">Read more</a>
         </div>
       </div>
     </div>
