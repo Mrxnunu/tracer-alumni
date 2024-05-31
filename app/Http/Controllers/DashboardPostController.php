@@ -81,11 +81,19 @@ class DashboardPostController extends Controller
         $post = Post::findOrFail($id);
         $validateData = $request->validate([
             'title' => 'required|max:255',
-            'slug' => 'required|unique:posts,slug,' . $id,
             'category_id' => 'required',
             'image' => 'image|file|max:1024',
             'body' => 'required'
         ]);
+
+        // Periksa apakah title berubah
+        if ($request->title !== $post->title) {
+            // Hapus slug lama agar slug baru di-generate
+            $validateData['slug'] = null;
+        } else {
+            // Pertahankan slug lama
+            $validateData['slug'] = $post->slug;
+        }
 
         // Handle image update if new image is provided
         if ($request->hasFile('image')) {

@@ -34,14 +34,8 @@
         <h2 class="text-2xl leading-tight font-medium">Detail Alumni</h2>
         <div class="mt-4">
             <h3 class="font-medium">{{ $alumni->nama }} ({{ $alumni->npm }})</h3>
-            {{-- <p><strong>Nama:</strong> {{ $alumni->nama }}</p>
-            <p><strong>Email:</strong> {{ $alumni->email }}</p>
-            <p><strong>NPM:</strong> {{ $alumni->npm }}</p>
-            <p><strong>Prodi:</strong> {{ $alumni->prodi }}</p>
-            <p><strong>Tahun Lulus:</strong> {{ $alumni->tahun_lulus }}</p> --}}
         </div>
         <div class="mt-4">
-            {{-- <h3 class="text-xl leading-tight font-medium">Jawaban Kuisioner</h3> --}}
             <table class="min-w-full mt-2 bg-white">
                 <thead>
                     <tr>

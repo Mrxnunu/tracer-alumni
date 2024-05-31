@@ -61,10 +61,17 @@ class DashboardCategory extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        // Validasi input
         $validateData = $request->validate([
             'name' => 'required|max:255',
         ]);
 
+        // Update slug hanya jika nama berubah
+        if ($category->name !== $validateData['name']) {
+            $validateData['slug'] = null; // Hapus slug lama
+        }
+
+        // Update data kategori
         $category->update($validateData);
 
         return redirect('/dashboard/categories')->with('success', 'Kategori Artikel Berhasil di Update');
