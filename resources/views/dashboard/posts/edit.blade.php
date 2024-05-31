@@ -43,13 +43,6 @@
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label for="slug" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-500">Slug</label>
-                    <input type="text" id="slug" name="slug" class="bg-gray-50 border border-gray-500 text-gray-900 dark:text-gray-400 placeholder-gray-700 dark:placeholder-gray-500 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-500 @error('slug') is-invalid @enderror" required autofocus value="{{ $post->slug }}">
-                    @error('slug')
-                    <p id="title" class="mt-2 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="mb-5">
                     <label for="category_id" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-500">Pilih Kategori</label>
                     <select id="category_id" name="category_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-amber-500 dark:focus:border-amber-500">
                         @foreach ($categories as $category)

@@ -41,24 +41,21 @@
         </div>
         <div class="mt-4">
             <h3 class="text-xl leading-tight font-medium">Jawaban Kuisioner</h3>
+            <p><strong>Tema Kuisioner:</strong> {{ $questionnaireTitle }}</p>
             <table class="min-w-full mt-2 bg-white">
                 <thead>
                     <tr>
                         <th class="px-4 py-2 border">Pertanyaan</th>
+                        <th class="px-4 py-2 border">Tipe</th>
                         <th class="px-4 py-2 border">Jawaban</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($jawaban as $jwb)
+                    @foreach ($jawabanWithQuestions as $jawaban)
                         <tr>
-                            <td class="px-4 py-2 border">{{ DB::table('questions')->where('id', $jwb->question_id)->value('question_text') }}</td>
-                            <td class="px-4 py-2 border">
-                                @if ($jwb->answer_id)
-                                    {{ DB::table('answers')->where('id', $jwb->answer_id)->value('answer_text') }}
-                                @else
-                                    {{ $jwb->answer_text }}
-                                @endif
-                            </td>
+                            <td class="px-4 py-2 border">{{ $jawaban['question_text'] }}</td>
+                            <td class="px-4 py-2 border">{{ $jawaban['type'] == 'multiple_choice' ? 'Multiple Choice' : 'Essay' }}</td>
+                            <td class="px-4 py-2 border">{{ $jawaban['answer_text'] }}</td>
                         </tr>
                     @endforeach
                 </tbody>
