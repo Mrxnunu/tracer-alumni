@@ -33,7 +33,7 @@
                     <thead>
                         <tr>
                             <th class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-400 bg-gray-100 dark:bg-slate-900 text-left text-xs font-semibold text-gray-600 dark:text-gray-500 uppercase tracking-wider">
-                                #
+                                No
                             </th>
                             <th class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-400 bg-gray-100 dark:bg-slate-900 text-left text-xs font-semibold text-gray-600 dark:text-gray-500 uppercase tracking-wider">
                                 Nama Alumni
@@ -81,11 +81,6 @@
                                     Detail
                                 </a>
                             </td>   
-                            {{-- <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <a href="/dashboard/alumni/{{ $a->npm }}" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200">
-                                    Detail
-                                </a>
-                            </td> --}}
                         </tr>
                         @endforeach
                     </tbody>
