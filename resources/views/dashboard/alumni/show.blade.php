@@ -32,6 +32,7 @@
     </nav>
     <div class="py-5">
         <h2 class="text-2xl leading-tight font-medium">Detail Alumni</h2>
+        <h1 class="font-medium">Tema : {{ $questionnaireTitle }}</h1>
         <div class="mt-4">
             <h1 class="font-medium">{{ $alumni->nama }} ({{ $alumni->npm }})</h1>
         </div>
