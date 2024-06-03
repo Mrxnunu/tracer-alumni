@@ -6,6 +6,7 @@ use App\Models\Parameter;
 use App\Models\Question;
 use App\Models\Questionnaire;
 use App\Models\tipe_soal;
+use App\Models\UserAnswer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -19,9 +20,20 @@ class DashboardPertanyaanController extends Controller
         // return view('dashboard.pertanyaan.index');
         // $parameters = Parameter::with(['topik', 'periode'])->latest()->get();
 
-        $questioner = Questionnaire::all();
+        // $questioner = Questionnaire::all();
+        $questionnaires = Questionnaire::select(
+            'id',
+            'title',
+            'description',
+            'active'
+        )
+            ->withCount(['questions as responden' => function ($query) {
+                $query->select(DB::raw('count(distinct nama)'))
+                    ->join('user_answers', 'questions.id', '=', 'user_answers.question_id');
+            }])
+            ->get();
         // $questioner = Questionnaire::where('active', false)->get();
-        return view('dashboard.pertanyaan.index', compact('questioner'));
+        return view('dashboard.pertanyaan.index', compact('questionnaires'));
     }
 
     /**
@@ -158,6 +170,57 @@ class DashboardPertanyaanController extends Controller
         return view('dashboard.pertanyaan.show', compact('questionnaire'));
     }
 
+    public function showResponden(string $id)
+    {
+        $questionIds = Question::where('questionnaire_id', $id)->pluck('id');
+
+        // Mengambil user answers yang distinct berdasarkan nama, email, npm, prodi, dan tahun_lulus
+        $userAnswers = UserAnswer::whereIn('question_id', $questionIds)
+            ->select('nama', 'email', 'npm', 'prodi', 'tahun_lulus')
+            ->distinct()
+            ->get();
+
+        // $questionnaireTitle = Questionnaire::where('questionnaire_id', $id)->pluck('title');
+
+        $questionnaireTitle = Questionnaire::where('id', $id)->value('title');
+
+        return view('dashboard.pertanyaan.showResponden', compact('userAnswers', 'questionnaireTitle'));
+    }
+
+    public function showDetailResponden($npm)
+    {
+        $alumni = DB::table('user_answers')
+            ->where('npm', $npm)
+            ->first();
+
+        $jawaban = DB::table('user_answers')
+            ->where('npm', $npm)
+            ->get();
+
+        // Retrieve questions with answers
+        $jawabanWithQuestions = $jawaban->map(function ($item) {
+            $question = DB::table('questions')
+                ->where('id', $item->question_id)
+                ->select('question_text', 'type', 'questionnaire_id')
+                ->first();
+
+            return [
+                'question_text' => $question->question_text,
+                'type' => $question->type,
+                'answer_text' => $item->answer_id
+                    ? DB::table('answers')->where('id', $item->answer_id)->value('answer_text')
+                    : $item->answer_text,
+                'questionnaire_id' => $question->questionnaire_id
+            ];
+        });
+
+        $questionnaireId = $jawabanWithQuestions->first()['questionnaire_id'];
+        $questionnaireTitle = DB::table('questionnaires')
+            ->where('id', $questionnaireId)
+            ->value('title');
+
+        return view('dashboard.pertanyaan.showDetailResponden', compact('alumni', 'jawabanWithQuestions', 'questionnaireTitle'));
+    }
     /**
      * Show the form for editing the specified resource.
      */
