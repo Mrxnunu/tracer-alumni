@@ -85,8 +85,8 @@ Route::get('/dashboard/alumni/{npm}', [DashboardAlumniController::class, 'show']
 
 Route::resource('/dashboard/pertanyaan', DashboardPertanyaanController::class)->middleware('auth');
 Route::patch('/dashboard/pertanyaan/{id}/toggle', [DashboardPertanyaanController::class, 'toggleActive'])->name('pertanyaan.toggleActive');
-
-
+Route::get('/dashboard/pertanyaan/showResponden/{id}', [DashboardPertanyaanController::class, 'showResponden'])->middleware('auth');
+Route::get('/dashboard/pertanyaan/showDetailResponden/{npm}', [DashboardPertanyaanController::class, 'showDetailResponden'])->middleware('auth');
 
 
 
