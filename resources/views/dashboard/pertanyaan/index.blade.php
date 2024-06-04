@@ -90,7 +90,7 @@
                                 </form>                                
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
-                                <a href="/dashboard/pertanyaan/showResponden/{{ $q->id }}"><p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $q->responden }}</p></a>
+                                <a href="/dashboard/pertanyaan/showResponden/{{ $q->id }}"><p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $q->responden }} <span class="hover:border-b-2 border-green-500 text-xs">Detail</span></p></a>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
                                 <a href="/dashboard/pertanyaan/{{ $q->id }}" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200">

@@ -47,7 +47,7 @@
 </div>
 
 @else
-  <p class="text-center text-2xl">Maaf Tidak Ada Loker</p>
+  <p class="text-center text-2xl">Maaf Belum Ada Loker</p>
 @endif
 
 <div class="flex justify-center">

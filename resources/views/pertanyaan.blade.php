@@ -56,7 +56,17 @@
                 <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
             @enderror
         </div>
-        
+        <div class="mb-5">
+            <label for="bekerja">Apakah Anda Sudah Bekerja ?</label>
+            <div class="flex items-center">
+                <input id="bekerja" name="bekerja" type="radio" value="1" class="w-4 h-4 text-amber-600 bg-gray-100 border-gray-300 focus:ring-amber-500 dark:focus:ring-amber-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="default-radio-1" class="ms-2 text-gray-600 dark:text-gray-300">Ya, Sudah</label>
+            </div>
+            <div class="flex items-center">
+                <input id="bekerja" name="bekerja" type="radio" value="0" class="w-4 h-4 text-amber-600 bg-gray-100 border-gray-300 focus:ring-amber-500 dark:focus:ring-amber-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="default-radio-2" class="ms-2 text-gray-600 dark:text-gray-300">Belum</label>
+            </div>
+        </div>
         @foreach($questionnaire->questions as $question)
         <div class="mb-4">
             <h4 class="text-base font-medium dark:text-white">{{ $question->question_text }}</h4>
