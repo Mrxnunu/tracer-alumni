@@ -34,8 +34,9 @@ class DashboardCategory extends Controller
         $validateData = $request->validate([
             'name' => 'required|max:255',
         ]);
+
         Category::create($validateData);
-        return redirect('/dashboard/categories')->with('success', 'New Category has been aded!');
+        return redirect('/dashboard/categories')->with('success', 'Kategori Berhasil Ditambahkan');
     }
 
     /**

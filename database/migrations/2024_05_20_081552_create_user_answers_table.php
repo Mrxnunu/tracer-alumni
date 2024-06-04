@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('npm')->unique();
             $table->string('prodi');
             $table->string('tahun_lulus');
+            $table->string('bekerja');
             $table->foreignId('question_id')->constrained()->onDelete('cascade');
             $table->foreignId('answer_id')->nullable()->constrained()->onDelete('cascade');
             $table->text('answer_text')->nullable();

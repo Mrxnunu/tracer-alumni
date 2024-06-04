@@ -57,7 +57,7 @@
 </div>
 
 @else
-  <p class="text-center text-2xl">Not post found</p>
+  <p class="text-center text-2xl">Maaf Belum Ada Artikel</p>
 @endif
 
 <div class="flex justify-center">

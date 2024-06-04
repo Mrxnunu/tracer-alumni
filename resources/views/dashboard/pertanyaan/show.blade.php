@@ -54,30 +54,6 @@
                 @endforeach
             </div>
         </div>   
-        {{-- <h2 class="text-2xl leading-tight font-medium mb-2">Detail Kuisioner</h2>
-        <div class="flex flex-row mb-1 sm:mb-0 justify-between w-full">
-            <h2 class="text-xl leading-tight font-medium">Judul : {{ $questionnaire->title }}</h2>
-        </div>
-        <div class="mb-4">
-            <p>{{ $questionnaire->description }}</p>
-        </div>
-        <div class="">
-            <h3 class="text-xl leading-tight">Pertanyaan</h3>
-            @foreach($questionnaire->questions as $question)
-                <div class="mb-4">
-                    <h4 class="text-lg font-semibold">{{ $question->question_text }}</h4>
-                    @if($question->type == 'multiple_choice')
-                        <ul class="list-disc pl-5">
-                            @foreach($question->answers as $answer)
-                                <li>{{ $answer->answer_text }}</li>
-                            @endforeach
-                        </ul>
-                    @else
-                        <p>Essay question</p>
-                    @endif
-                </div>
-            @endforeach
-        </div> --}}
     </div>
 </div>
 @endsection

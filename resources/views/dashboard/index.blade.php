@@ -17,7 +17,7 @@
   <div class="bg-slate-100 py-4 px-2 rounded-md mt-4 dark:bg-gray-900">
     <h1 class="font-bold text-lg md:text-xl ms-4 dark:text-white">Admin <span class="uppercase">{{ auth()->user()->name }}</span> Universitas Bhayangakara Jakarta Raya</h1>
     <div class="p-4 grid md:flex flex-row gap-2 justify-around">
-      <div class="basis-1/4 bg-white shadow-md rounded-md py-5 px-3">
+      {{-- <div class="basis-1/4 bg-white shadow-md rounded-md py-5 px-3">
         <div class="flex justify-between">
           <h1 class="font-sans font-semibold text-sm dark:text-slate-800">Total Alumni</h1>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 dark:text-slate-800">
@@ -27,19 +27,20 @@
         <div>
           <h2 class="font-bold text-xl dark:text-slate-800">{{ $dataAlumni }}</h2>
         </div>
-      </div>
+      </div> --}}
         <div class="basis-1/4 bg-white shadow-md rounded-md py-5 px-3">
         <div class="flex justify-between">
-          <h1 class="font-sans font-semibold text-sm dark:text-slate-800">Total Perusahaan</h1>
+          <h1 class="font-sans font-semibold text-sm dark:text-slate-800">Total Lowongan Kerja</h1>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 dark:text-slate-800">
             <path fill-rule="evenodd" d="M4 16.5v-13h-.25a.75.75 0 0 1 0-1.5h12.5a.75.75 0 0 1 0 1.5H16v13h.25a.75.75 0 0 1 0 1.5h-3.5a.75.75 0 0 1-.75-.75v-2.5a.75.75 0 0 0-.75-.75h-2.5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 1-.75.75h-3.5a.75.75 0 0 1 0-1.5H4Zm3-11a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM11 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm.5 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z" clip-rule="evenodd" />
           </svg>
         </div>
         <div>
-          <h2 class="font-bold text-xl dark:text-slate-800">3</h2>
+          <h2 class="font-bold text-xl dark:text-slate-800">{{ $totalLoker }}</h2>
         </div>
       </div>
       <div class="basis-1/4 bg-white shadow-md rounded-md py-5 px-3">
+        <a href="/dashboard/posts">
         <div class="flex justify-between">
           <h1 class="font-sans font-semibold text-sm dark:text-slate-800">Total Artikel</h1>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 dark:text-slate-800">
@@ -49,16 +50,23 @@
         <div>
           <h2 class="font-bold text-xl dark:text-slate-800">{{ $artikel }}</h2>
         </div>
+        </a>
       </div>
       <div class="basis-1/4 bg-white shadow-md rounded-md py-5 px-3">
         <div class="flex justify-between">
-          <h1 class="font-sans font-semibold text-sm dark:text-slate-800">Total Kuisioner yang dilakukan</h1>
+          <h1 class="font-sans font-semibold text-sm dark:text-slate-800">Total Responden</h1>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 dark:text-slate-800">
             <path d="M15.5 2A1.5 1.5 0 0 0 14 3.5v13a1.5 1.5 0 0 0 1.5 1.5h1a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 16.5 2h-1ZM9.5 6A1.5 1.5 0 0 0 8 7.5v9A1.5 1.5 0 0 0 9.5 18h1a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 10.5 6h-1ZM3.5 10A1.5 1.5 0 0 0 2 11.5v5A1.5 1.5 0 0 0 3.5 18h1A1.5 1.5 0 0 0 6 16.5v-5A1.5 1.5 0 0 0 4.5 10h-1Z" />
           </svg>
         </div>
         <div>
-          <h2 class="font-bold text-xl dark:text-slate-800">4</h2>
+          @foreach ($questionnaires as $q )
+          <a href="/dashboard/pertanyaan/showResponden/{{ $q->id }}">
+            <h2 class="font-bold text-xl dark:text-slate-800">
+                {{ $q->responden }}
+            </h2>
+          </a>
+          @endforeach
         </div>
       </div>
     </div>

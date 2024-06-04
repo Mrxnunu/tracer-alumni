@@ -41,6 +41,7 @@ class PertanyaanController extends Controller
             'npm' => 'required|string|max:255|unique:user_answers',
             'prodi' => 'required|string|max:255',
             'tahun_lulus' => 'required|string|max:255',
+            'bekerja' => 'required',
             'answers.*' => 'required',
         ]);
 
@@ -70,6 +71,7 @@ class PertanyaanController extends Controller
                     'npm' => $data['npm'],
                     'prodi' => $data['prodi'],
                     'tahun_lulus' => $data['tahun_lulus'],
+                    'bekerja' => $data['bekerja'],
                     'question_id' => $questionId,
                     'answer_id' => $answer,
                 ]);
@@ -81,6 +83,7 @@ class PertanyaanController extends Controller
                     'npm' => $data['npm'],
                     'prodi' => $data['prodi'],
                     'tahun_lulus' => $data['tahun_lulus'],
+                    'bekerja' => $data['bekerja'],
                     'question_id' => $questionId,
                     'answer_text' => $answer,
                 ]);
