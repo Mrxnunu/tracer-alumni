@@ -24,12 +24,12 @@
     </nav>
     <div class="py-5">
         <div class="flex flex-row mb-1 sm:mb-0 justify-between w-full items-center">
-            <h2 class="text-2xl leading-tight font-medium dark:text-white">Master Alumni</h2>
+            <h2 class="text-xl md:text-2xl leading-tight font-medium dark:text-white">Master Alumni</h2>
             <p class="text-red-600 text-xs">Data Ini Merupakan alumni yang sudah mengisi Kuisioner</p>
         </div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-            <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                <table id="example" class="display" style="width:100%">
+            <div class="inline-block min-w-full shadow rounded-lg overflow-hidden p-4">
+                <table id="example" class="stripe pt-4 pb-2" style="width:100%">
                     <thead>
                         <tr>
                             <th class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-400 bg-gray-100 dark:bg-slate-900 text-left text-xs font-semibold text-gray-600 dark:text-gray-500 uppercase tracking-wider">
@@ -58,26 +58,26 @@
                     <tbody class="dark:bg-slate-900">
                         @foreach ($dataAlumni as $a)
                         <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
+                            <td class="px-5 py-5 text-sm">
                                 <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $loop->iteration }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
+                            <td class="px-5 py-5 text-sm">
                                 <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $a->nama }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
+                            <td class="px-5 py-5 text-sm">
                                 <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $a->email }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
+                            <td class="px-5 py-5 text-sm">
                                 <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $a->npm }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
+                            <td class="px-5 py-5 text-sm">
                                 <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $a->prodi }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
+                            <td class="px-5 py-5 text-sm">
                                 <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $a->tahun_lulus }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
-                                <a href="{{ url('/dashboard/alumni/'.$a->npm) }}" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200">
+                            <td class="px-5 py-5 text-sm">
+                                <a href="{{ url('/dashboard/alumni/'.$a->npm) }}" class="flex-shrink-0 px-4 py-2 font-medium hover:text-amber-600">
                                     Detail
                                 </a>
                             </td>  

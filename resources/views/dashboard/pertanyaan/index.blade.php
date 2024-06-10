@@ -40,16 +40,16 @@
     </nav>
     <div class="py-5">
         <div class="flex flex-row mb-1 sm:mb-0 justify-between w-full items-center">
-            <h2 class="text-2xl leading-tight font-medium dark:text-white">Master Kuisioner</h2>
+            <h2 class="text-xl md:text-2xl leading-tight font-medium dark:text-white">Master Kuisioner</h2>
             <div class="text-end flex">
-                <a href="/dashboard/pertanyaan/create" class="flex-shrink-0 px-4 py-2 text-xs font-semibold text-white bg-amber-600 rounded-lg shadow-md hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200">
+                <a href="/dashboard/pertanyaan/create" class="flex-shrink-0 px-4 py-2 text-xs font-semibold text-white bg-amber-600 rounded-lg shadow-md hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-green-200">
                     Tambah Kuisioner
                 </a>
             </div>
         </div>
         <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
             <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                <table id="example" class="min-w-full leading-normal">
+                <table id="" class="min-w-full leading-normal">
                     <thead>
                         <tr>
                             <th class="px-5 py-3 border-b-2 border-gray-200 dark:border-gray-400 bg-gray-100 dark:bg-slate-900 text-left text-xs font-semibold text-gray-600 dark:text-gray-500 uppercase tracking-wider">
@@ -90,7 +90,7 @@
                                 </form>                                
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
-                                <a href="/dashboard/pertanyaan/showResponden/{{ $q->id }}"><p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $q->responden }} <span class="hover:border-b-2 border-green-500 text-xs">Detail</span></p></a>
+                                <a href="/dashboard/pertanyaan/show-responden/{{ $q->id }}"><p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $q->responden }} <span class="hover:border-b-2 border-green-500 text-xs">Detail</span></p></a>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
                                 <a href="/dashboard/pertanyaan/{{ $q->id }}" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200">
