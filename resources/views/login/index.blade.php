@@ -47,11 +47,11 @@
                 </button>
             </div>
 
-            <div class="mt-4 text-center">
+            {{-- <div class="mt-4 text-center">
               <p class="text-gray-700 text-sm">Don't have an account? 
                   <a href="/register" class="text-amber-500 hover:text-amber-800 font-bold">Register</a>
               </p>
-          </div>
+            </div> --}}
         </form>
     </div>
   </div>

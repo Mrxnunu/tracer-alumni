@@ -57,6 +57,8 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 
+
+
 // route berhasil login dan mengarah ke dashboard
 // Route::get('/dashboard', function () {
 //   return view('dashboard.index');
@@ -96,7 +98,7 @@ Route::get('/dashboard/pertanyaan/showDetailResponden/{npm}', [DashboardPertanya
 // route untuk register
 // guest hanya untuk yang belum login atau tamu
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 
 
