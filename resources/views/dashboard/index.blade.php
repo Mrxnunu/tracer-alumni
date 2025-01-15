@@ -61,7 +61,7 @@
         </div>
         <div>
           @foreach ($questionnaires as $q )
-          <a href="/dashboard/pertanyaan/showResponden/{{ $q->id }}">
+          <a href="/dashboard/pertanyaan/show-responden/{{ $q->id }}">
             <h2 class="font-bold text-xl dark:text-slate-800">
                 {{ $q->responden }}
             </h2>

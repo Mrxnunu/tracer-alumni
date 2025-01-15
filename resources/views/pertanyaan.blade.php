@@ -11,7 +11,7 @@
     <h1 class="font-semibold text-xl dark:text-white">Kuisioner Tracer Alumni</h1>
 </div>
 @if($questionnaire)
-<div class="max-h-80 overflow-y-auto grid md:flex justify-between mx-auto px-4 lg:px-10">
+<div class="max-h-96 overflow-y-auto mx-auto px-4 lg:px-10">
     <form action="{{ route('pertanyaan.submit', $questionnaire->id) }}" method="POST" class="w-full">
         @csrf
         <div class="mb-3">
