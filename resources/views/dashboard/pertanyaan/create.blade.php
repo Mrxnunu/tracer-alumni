@@ -75,11 +75,18 @@
 
                     </button>
                 </div>
-                <select id="question_type_${questionCount}" name="questions[${questionCount}][type]" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500" onchange="showQuestionForm(${questionCount})" required>
-                    <option value="" selected disabled>Pilih Tipe Pertanyaan</option>
-                    <option value="multiple_choice">Pilihan Ganda</option>
-                    <option value="essay">Essay</option>
-                </select>
+                <div class="flex items-center">
+                    <select id="question_type_${questionCount}" name="questions[${questionCount}][type]" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500" onchange="showQuestionForm(${questionCount})" required>
+                        <option value="" selected disabled>Pilih Tipe Pertanyaan</option>
+                        <option value="multiple_choice">Pilihan Ganda</option>
+                        <option value="essay">Essay</option>
+                    </select>
+                    <div class="flex items-center m-2">
+                        <input type="hidden" checked value='0' id="option_${questionCount}" name="questions[${questionCount}][option]1" class="m-2">
+                        <input type="checkbox" value='1' id="option_${questionCount}" name="questions[${questionCount}][option]2" class="focus:ring-amber-500 focus:border-amber-500 text-amber-600">
+                        <label class="text-xs m-2">wajib diisi</label>
+                    </div>
+                </div>
                 <div id="question_form_${questionCount}" style="display: none;">
                     <input type="text"  placeholder="Masukan Pertanyaan"  name="questions[${questionCount}][question_text]" class="bg-grey-50 border border-grey-500 text-grey-900 dark:text-grey-400 placeholder-grey-700 dark:placeholder-grey-500 text-sm rounded-lg focus:ring-grey-500 focus:border-grey-500 block w-full p-2.5 dark:bg-gray-700 dark:border-grey-500 mt-2" required>
                     <div class="answers mt-2">
@@ -96,6 +103,15 @@
             </div>`;
         document.getElementById('questions').insertAdjacentHTML('beforeend', questionHTML);
     }
+
+    const checkbox = document.getElementById('option_${questionCount}');
+    checkbox.addEventListener('change', () => {
+        if (!checkbox.checked) {
+            checkbox.setAttribute('value', '0');
+        } else {
+            checkbox.setAttribute('value', '1');
+        }
+    });
 
     function removeQuestion(button) {
         button.closest('.question').remove();
@@ -190,7 +206,6 @@
                 }
             });
         });
-
+    
 </script>
-
 @endsection

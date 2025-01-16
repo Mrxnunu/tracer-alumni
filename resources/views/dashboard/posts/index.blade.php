@@ -56,17 +56,17 @@
                         </thead>
                         <tbody class="dark:bg-slate-900">
                             @foreach ($posts as $p)
-                            <tr>
-                                <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
-                                    <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $loop->iteration }}</p>
+                            <tr class="border-b">
+                                <td class="px-5 py-5 border-gray-200 dark:border-gray-400 text-sm text-gray-900">
+                                    <p class=" dark:text-gray-300 whitespace-no-wrap">{{ $loop->iteration }}</p>
                                 </td>
-                                <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
-                                    <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $p->title }}</p>
+                                <td class="px-5 py-5 border-gray-200 dark:border-gray-400 text-sm text-gray-900">
+                                    <p class=" dark:text-gray-300 whitespace-no-wrap">{{ $p->title }}</p>
                                 </td>
-                                <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
-                                    <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $p->category->name }}</p>
+                                <td class="px-5 py-5 border-gray-200 dark:border-gray-400 text-sm text-gray-900">
+                                    <p class=" dark:text-gray-300 whitespace-no-wrap">{{ $p->category->name }}</p>
                                 </td>
-                                <td class="grid gap-1 md:flex md:gap-2 px-5 py-5 border-b border-gray-200 bg-dark text-sm">
+                                <td class="grid gap-1 md:flex md:gap-2 px-5 py-5 border-gray-200 bg-dark text-sm">
                                     <a href="{{ route('posts.edit', $p->id) }}" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200 mb-2 md:mb-0">
                                         Edit
                                     </a>

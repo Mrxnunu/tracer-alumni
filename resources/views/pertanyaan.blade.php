@@ -26,7 +26,7 @@
             </label>
             <input type="text" id="email" name="email" class="block w-full p-1 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
             @error('email')
-                <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
+                <div class="text-red-500 text-xs mt-2">{{ $message }}</div>
             @enderror
         </div>
         <div class="mb-5">
@@ -69,18 +69,18 @@
         </div>
         @foreach($questionnaire->questions as $question)
         <div class="mb-4">
-            <h4 class="text-base font-medium dark:text-white">{{ $question->question_text }}</h4>
+            <label class="text-base font-medium dark:text-white">{{ $question->question_text }} <span class="text-xs text-red-500">{{ $question->option ? "* wajib diisi" : ""}}</span></label>
             @if($question->type == 'multiple_choice')
             @foreach($question->answers as $answer)
             <div>
                 <label class="dark:text-white">
-                    <input type="radio" class="focus:ring-amber-500 focus:border-amber-500 text-amber-600" name="answers[{{ $question->id }}]" value="{{ $answer->id }}">
+                    <input type="radio" class="focus:ring-amber-500 focus:border-amber-500 text-amber-600" name="answers[{{ $question->id }}]" value="{{ $answer->id }}" {{ $question->option ? "required" : "" }}>
                     {{ $answer->answer_text }}
                 </label>
             </div>
             @endforeach
             @else
-            <textarea name="answers[{{ $question->id }}]" rows="4" class="w-full border border-gray-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:bg-gray-600 p-2 rounded-lg focus:ring-amber-500 focus:border-amber-500"></textarea>
+            <textarea name="answers[{{ $question->id }}]" rows="2" class="w-full border border-gray-300 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:bg-gray-600 p-2 rounded-lg focus:ring-amber-500 focus:border-amber-500" {{ $question->option ? "required" : "" }}></textarea>
             @endif
         </div>
         @endforeach
