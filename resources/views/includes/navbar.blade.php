@@ -1,6 +1,6 @@
 <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 md:px-10">
   <div class="flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="/back/img/Logo_ubhara.png" class="h-7" alt="Ubhara Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tracer Alumni</span>
     </a>
@@ -42,7 +42,7 @@
                 <li>
                   <form action="/logout" method="POST">
                     @csrf
-                    <button type="submit" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</button>
+                    <button type="submit" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white w-full text-left">Logout</button>
                   </form>
                 </li>
               </ul>

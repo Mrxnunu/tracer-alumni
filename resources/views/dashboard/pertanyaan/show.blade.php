@@ -42,15 +42,16 @@
                         @if($question->type == 'multiple_choice')
                         @foreach($question->answers as $answer)
                         <div>
-                            <label>
-                                <ul>{{ $answer->answer_text }}</ul>
-                            </label>
+                            <label class="dark:text-white">
+                                <input disabled type="radio" class="focus:ring-amber-500 focus:border-amber-500 text-amber-600" name="answers[{{ $question->id }}]" value="{{ $answer->id }}">
+                                {{ $answer->answer_text }}
+                            </label> 
                         </div>
                         @endforeach
                         @else
-                        <textarea name="answers[{{ $question->id }}]" rows="4" class="w-full border border-gray-300 p-2 rounded-lg focus:ring-amber-500 focus:border-amber-500"></textarea>
+                        <textarea disabled name="answers[{{ $question->id }}]" rows="2" class="w-full border border-gray-300 p-2 rounded-lg focus:ring-amber-500 focus:border-amber-500"></textarea>
                         @endif
-                </div>
+                    </div>
                 @endforeach
             </div>
         </div>   

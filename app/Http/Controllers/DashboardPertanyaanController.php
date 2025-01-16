@@ -128,6 +128,7 @@ class DashboardPertanyaanController extends Controller
             'questions.*.question_text.required' => 'Teks pertanyaan wajib diisi.',
             'questions.*.type.required' => 'Tipe pertanyaan wajib dipilih.',
             'questions.*.type.in' => 'Tipe pertanyaan harus berupa pilihan ganda atau esai.',
+            'questions.*.option.required' => 'Option pertanyaan wajib dipilih.',
             'questions.*.answers.*.answer_text.required_if' => 'Jawaban untuk pertanyaan pilihan ganda wajib diisi.',
         ];
 
@@ -137,8 +138,11 @@ class DashboardPertanyaanController extends Controller
             'questions' => 'required|array|min:1',
             'questions.*.question_text' => 'required',
             'questions.*.type' => 'required|in:multiple_choice,essay',
+            'questions.*.option' => 'nullable',
             'questions.*.answers.*.answer_text' => 'required_if:questions.*.type,multiple_choice',
         ], $messages);
+
+        // dd($data);
 
         $questionnaire = Questionnaire::create([
             'title' => $data['title'],
@@ -149,13 +153,14 @@ class DashboardPertanyaanController extends Controller
             $question = $questionnaire->questions()->create([
                 'question_text' => $questionData['question_text'],
                 'type' => $questionData['type'],
+                'option' => $questionData['option']
             ]);
 
             if ($questionData['type'] == 'multiple_choice') {
                 $question->answers()->createMany($questionData['answers']);
             }
         }
-        return redirect('/dashboard/pertanyaan')->with('success', 'berhasil ditambahkan');
+        return redirect('/dashboard/pertanyaan')->with('success', 'Kuisioner Berhasil Ditambahkan');
     }
 
 

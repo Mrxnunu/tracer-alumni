@@ -30,7 +30,7 @@
         </ol>
     </nav>
     <div class="py-5">
-        <h2 class="text-2xl leading-tight font-medium mb-4">Data Responden</h2>
+        <h2 class="text-2xl leading-tight font-medium">Data Responden</h2>
         <div class="flex flex-row mb-1 sm:mb-0 justify-between w-full">
         <h1 class="font-medium">Tema : {{ $questionnaireTitle }}</h1>
         </div>
@@ -65,7 +65,7 @@
                     <tbody class="dark:bg-slate-900">
                         @foreach ($userAnswers as $a)
                         <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
+                            <td class="px-5 py-5 text-sm">
                                 <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $loop->iteration }}</p>
                             </td>
                             <td class="px-5 py-5 text-sm">

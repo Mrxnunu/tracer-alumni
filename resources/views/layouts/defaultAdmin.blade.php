@@ -19,6 +19,7 @@
 	<!--Responsive Extension Datatables CSS-->
 	<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
 
+	{{-- Style DataTable --}}
 	<style>
 		/*Overrides for Tailwind CSS */
 

@@ -2,7 +2,7 @@
     <div class="mx-auto p-6 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
-              <a href="#" class="flex items-center">
+              <a href="/" class="flex items-center">
                   <img src="/back/img/Logo_ubhara.png" class="h-8 me-3" alt="Ubhara Logo" />
                   <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tracer Alumni</span>
               </a>

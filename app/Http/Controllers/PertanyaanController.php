@@ -42,7 +42,7 @@ class PertanyaanController extends Controller
             'prodi' => 'required|string|max:255',
             'tahun_lulus' => 'required|string|max:255',
             'bekerja' => 'required',
-            'answers.*' => 'required',
+            'answers.*' => '',
         ]);
 
         $existingEmail = DB::table('user_answers')->where('email', $data['email'])->exists();

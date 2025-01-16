@@ -6,7 +6,7 @@
     <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
         <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
     </svg>
-    <span class="text-sm ms-2">{{ session('success') }}</span>
+    <span class="text-sm m-2">{{ session('success') }}</span>
     <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700" data-dismiss-target="#alert-3" aria-label="Close">
         <span class="sr-only">Close</span>
         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -72,11 +72,11 @@
                     <tbody class="dark:bg-slate-900">
                         @foreach ($questionnaires as $q)
                         <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
-                                <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $q->title }}</p>
+                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm text-gray-900">
+                                <p class=" dark:text-gray-300 whitespace-no-wrap">{{ $q->title }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
-                                <p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $q->description }}</p>
+                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm text-gray-900">
+                                <p class=" dark:text-gray-300 whitespace-no-wrap">{{ $q->description }}</p>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
                                 <form action="{{ route('pertanyaan.toggleActive', $q->id) }}" method="POST" id="toggle-active-form-{{ $q->id }}">
@@ -84,13 +84,13 @@
                                     @method('PATCH')
                                     <label class="inline-flex items-center cursor-pointer">
                                         <input type="checkbox" class="sr-only peer" onChange="toggleActive({{ $q->id }})" {{ $q->active ? 'checked' : '' }}>
-                                        <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:bg-green-600"></div>
-                                        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $q->active ? 'Active' : 'Inactive' }}</span>
+                                        <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:bg-green-600 text-gray-900"></div>
+                                        <span class="ms-3 text-sm font-medium  dark:text-gray-300">{{ $q->active ? 'Active' : 'Inactive' }}</span>
                                     </label>
                                 </form>                                
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
-                                <a href="/dashboard/pertanyaan/show-responden/{{ $q->id }}"><p class="text-gray-900 dark:text-gray-300 whitespace-no-wrap">{{ $q->responden }} <span class="hover:border-b-2 border-green-500 text-xs">Detail</span></p></a>
+                            <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm text-gray-900">
+                                <a href="/dashboard/pertanyaan/show-responden/{{ $q->id }}"><p class=" dark:text-gray-300 whitespace-no-wrap">{{ $q->responden }} <span class="hover:border-b-2 border-green-500 text-xs">Detail</span></p></a>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 dark:border-gray-400 text-sm">
                                 <a href="/dashboard/pertanyaan/{{ $q->id }}" class="flex-shrink-0 px-4 py-2 font-medium text-white bg-green-500 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200">
